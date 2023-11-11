@@ -18,11 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname = mysqli_real_escape_string($conn, $_POST['first-name']);
     $lastname = mysqli_real_escape_string($conn, $_POST['last-name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $dob = mysqli_real_escape_string($conn, $_POST['date-of-birth']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    $sqlstatement = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$firstname', '$lastname', '$email', '$username', '$hashed_password')";
+    $sqlstatement = "INSERT INTO users (first_name, last_name, email, phone, date_of_birth, username, password)
+                     VALUES ('$firstname', '$lastname', '$email', '$phone', '$dob', '$username', '$hashed_password')";
     mysqli_query($conn, $sqlstatement);
 }
 // $result = mysqli_query($conn, $sqlstatement);
@@ -32,4 +35,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 header('location:../html/signup.html');
 mysqli_close($conn);
-?>

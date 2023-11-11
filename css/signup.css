@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main, footer {
+    padding: 10px;
+}
+
+#signup-form {
+    margin-bottom: 1em;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 1em 0.5em;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 1em;
+}
+
+#btn-submit {
+    width: 100%;
+    padding: 0.7em 0.5em;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #E0251E;
+    color: white;
+    cursor: pointer;
+}
+
+#date-of-birth {
+    background-image: url('../img/calendar-iconn.jpg');
+    background-position: 98% center;
+    background-repeat: no-repeat;
+}
+
+#sign-in {
+    text-align: center;
+}
+
+#sign-in a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+#division-or {
+    border-bottom: 1px solid rgba(34, 34, 34, .15);
+    text-align: center;
+    margin: 25px auto;
+    line-height: 0;
+}
+
+#division-or span {
+    padding: 12px;
+    background-color: white;
+    color: black;
+}
+
+#signup-options a {
+    display: block;
+    padding: 1em 0.5em;
+    border-radius: 5px;
+    border: 1px solid gray;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    text-align: justify;
+    color: gray;
+    font-size: small;
+}
+
+#sign-up-apple {
+    background-image: url('../img/apple-logo.png');
+    background-position: 1em center;
+    background-repeat: no-repeat;
+}
+
+#sign-up-google {
+    background-image: url('../img/google-logo.png');
+    background-position: 1em center;
+    background-repeat: no-repeat;
+}
+
+#sign-up-facebook {
+    background-image: url('../img/facebook-logo.png');
+    background-position: 1em center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 580px) {
+    main, footer {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    #signup-form {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+}
