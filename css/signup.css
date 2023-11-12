@@ -100,7 +100,7 @@ footer p {
     background-repeat: no-repeat;
 }
 
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 481px) {
     main, footer {
         max-width: 600px;
         margin: auto;
