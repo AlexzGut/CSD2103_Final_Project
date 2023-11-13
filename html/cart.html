@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cart </title>
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../js/cart.js"></script>
+</head>
+<body>
+    <header>
+        <div id="close-cart">X</div>
+        <h1> MY CART </h1>
+    </header>
+    <main>
+        <!-- Here the list of products on the list -->
+        <section id="products-in-cart">
+            <article>
+                <div class="product-images">
+                </div>
+                <div class="product-information">
+                    <h3 class="product-name"> Product Name </h3>
+                    <p class="product-description"> 
+                        Description. This is a hamburger Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Officiis dignissimos iste sapiente voluptate ipsa, temporibus error mollitia voluptatum perferendis.
+                    </p>
+                    <p class="product-price"> 
+                        $ XX.XX
+                    </p>
+                </div>
+            </article>
+        </section>
+        
+        <div id="page-bottom">
+            <div id="cart-summary">
+                <table>
+                    <caption> Summary Cart </caption>
+                    <thead>
+                        <tr>
+                            <th> Product </th>
+                            <th> Price </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Product 1 
+                            </td>
+                            <td>
+                                $ XX.XX
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                            <tr>
+                                <td>
+                                    Total
+                                </td>
+                                <td>
+                                    $ XX.XX 
+                                </td>
+                            </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div id="buttons">
+                <button type="button"> Add more items </button>
+                <button type="button"> Checkout </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
