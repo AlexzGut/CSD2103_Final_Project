@@ -19,14 +19,90 @@
                 <div class="product-images">
                 </div>
                 <div class="product-information">
-                    <h3 class="product-name"> Product Name </h3>
+                    <h3 class="product-name"> Product Name 1</h3>
                     <p class="product-description"> 
-                        Description. This is a hamburger Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Officiis dignissimos iste sapiente voluptate ipsa, temporibus error mollitia voluptatum perferendis.
+                        Description. This is the description
                     </p>
                     <p class="product-price"> 
                         $ XX.XX
                     </p>
+                    <div class="quantity-buttons">
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value"><img src="../img/icons/minus-icon.svg"></div>
+                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"><img src="../img/icons/plus-icon.svg"></div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="product-images">
+                </div>
+                <div class="product-information">
+                    <h3 class="product-name"> Product Name 2</h3>
+                    <p class="product-description"> 
+                        Description. This is the description
+                    </p>
+                    <p class="product-price"> 
+                        $ XX.XX
+                    </p>
+                    <div class="quantity-buttons">
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="product-images">
+                </div>
+                <div class="product-information">
+                    <h3 class="product-name"> Product Name 3</h3>
+                    <p class="product-description"> 
+                        Description. This is the description
+                    </p>
+                    <p class="product-price"> 
+                        $ XX.XX
+                    </p>
+                    <div class="quantity-buttons">
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="product-images">
+                </div>
+                <div class="product-information">
+                    <h3 class="product-name"> Product Name 4</h3>
+                    <p class="product-description"> 
+                        Description. This is the description
+                    </p>
+                    <p class="product-price"> 
+                        $ XX.XX
+                    </p>
+                    <div class="quantity-buttons">
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="product-images">
+                </div>
+                <div class="product-information">
+                    <h3 class="product-name"> Product Name 5</h3>
+                    <p class="product-description"> 
+                        Description. This is the description
+                    </p>
+                    <p class="product-price"> 
+                        $ XX.XX
+                    </p>
+                    <div class="quantity-buttons">
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </div>
                 </div>
             </article>
         </section>
@@ -35,28 +111,54 @@
             <div id="cart-summary">
                 <table>
                     <caption> Summary Cart </caption>
-                    <thead>
-                        <tr>
-                            <th> Product </th>
-                            <th> Price </th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <td>
+                            <td class="col1">
                                 Product 1 
                             </td>
-                            <td>
+                            <td class="col2">
                                 $ XX.XX
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col1">
+                                Product 2 
+                            </td>
+                            <td class="col2">
+                                $ YY.YY
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col1">
+                                Product 3 
+                            </td>
+                            <td class="col2">
+                                $ YY.YY
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col1">
+                                Product 4 
+                            </td>
+                            <td class="col2">
+                                $ YY.YY
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col1">
+                                Product 5 
+                            </td>
+                            <td class="col2">
+                                $ YY.YY
                             </td>
                         </tr>
                     </tbody>
                     <tfoot>
                             <tr>
-                                <td>
+                                <td id="col-total">
                                     Total
                                 </td>
-                                <td>
+                                <td id="col-total-price">
                                     $ XX.XX 
                                 </td>
                             </tr>
@@ -65,8 +167,8 @@
             </div>
 
             <div id="buttons">
-                <button type="button"> Add more items </button>
-                <button type="button"> Checkout </button>
+                <button type="button" class="secondary-button"> Add more items </button>
+                <button type="button" class="primary-button"> Checkout </button>
             </div>
         </div>
     </main>
