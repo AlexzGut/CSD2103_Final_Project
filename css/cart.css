@@ -1,5 +1,15 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
 header {
+    background-color: #E0251E;
+    color: white;
     display: flex;
+    left: 0;
+    position: sticky;
+    top: 0;
 }
 
 header h1 {
@@ -8,11 +18,154 @@ header h1 {
 }
 
 #close-cart {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
-main {
+section {
     display: flex;
     flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+article {
+    background-color: #D9D9D9;
+    border-radius: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2% auto 2%;
+    width: 80%;
+}
+
+.product-images {
+    border-right: 1px black solid;
+}
+
+.product-information {
+    margin-left: 10%;
+    margin-right: 10%;
+} 
+
+div h3, p {
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.quantity-buttons {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3% 30% 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 40%;
+}
+
+.product-quantity, .value-button {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.value-button img {
+    height: 80%;
+    max-height: 13px;
+    max-width: 13px;
+    min-height: 10px;
+    min-width: 10px;
+    width: 80%;
+}
+
+input {
+    border: none;
+    padding: 0;
+    text-align: center;
+}
+
+/* Hides the arrows for input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#cart-summary {
+    display: flex;
+    justify-content: center;
+}
+
+caption {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+table {
+    width: 50%;
+}
+
+.col1, caption {
+    text-align: left;
+}
+
+.col2, #col-total-price {
+    text-align: right;
+}
+
+
+table, tfoot td {
+    border-collapse: collapse;
+    border: none;
+    padding: 0;
+}
+
+tfoot {
+    border-top: 2px solid black;
+}
+
+
+#page-bottom {
+    background-color: white;
+    bottom: 0;
+    border-top: #F6F6F6 solid;
+    box-sizing: border-box;
+    position: sticky;
+    width: 100%;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1% 5% 0% 5%;
+    box-sizing: border-box;
+    width: 90%;
+}
+
+tbody td {
+    vertical-align: bottom;
+}
+
+@media screen and (min-width: 769px) { /* For devices bigger than tablets*/
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1500px;
+    }
+    
+    #page-bottom {
+        border-left: #F6F6F6 solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 50%;
+        position: fixed;
+        top: 82px;
+        width: 50%;
+    }
+    
 }
