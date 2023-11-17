@@ -1,0 +1,132 @@
+/* Author: Paul Untalan c0899319 */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* Style the top section */
+.profile-top {
+  background-color: #000000;
+  text-align: center;
+}
+
+.profile-background {
+  position: relative;
+  background-image: url('../img/burger2.jpg');
+  background-size: cover;
+  background-position: center;
+  max-width: 100%; /* Set a fixed height or use other units for responsiveness */
+}
+
+.profile-background h1 {
+  position: absolute;
+  color: white;
+}
+
+.profile-picture {
+  background-color: #dbac34;
+  position:absolute;
+  bottom: -140px;
+  right:110px;
+  width:200px;
+  height:200px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+#profile-picture-image {
+  align-content: center;
+  ;
+  height:75%;
+  margin-top:10px;
+}
+
+/* Middle Section */
+
+.new-section {
+  margin-top: 160px; /* Adjust margin top to position it where you want */
+  text-align: center;
+  /* Add other positioning or styling as needed */
+}
+
+.section-content {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto; /* Center content */
+}
+
+.text-container {
+  column-count: 2; /* Create two columns */
+  column-gap: 40px; /* Adjust gap between columns */
+  margin-top: 30px;
+}
+
+/* Additional styling for the columns (optional) */
+.column {
+  width: 90%; /* Ensure each column takes up full width */
+}
+
+
+/* Style the buttons section */
+
+.profile-buttons {
+  position: fixed;
+  bottom: 90px; /* Adjust the distance from the bottom */
+  left: 20px; /* Adjust the distance from the left */
+  z-index: 999; /* Ensure it's above other content */
+}
+
+
+/* Button styles */
+.profile-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #dbac34;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/*style for the button container */
+
+.button-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px; /* Adding rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Adding shadow effect */
+}
+
+/* Adjustments for button and label positioning */
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 10px; /* Add whitespace between buttons */
+}
+
+.button-wrapper .button-label {
+  color: #555;
+  font-size: x-large;
+  margin-left: 15px; /* Add some space between the button and the label */
+}
+
+.button1 {
+  filter: invert(0%) sepia(0%) saturate(7493%) hue-rotate(246deg) brightness(94%) contrast(100%);
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+}
+
+/* Button hover effect */
+.profile-buttons button:hover {
+  transform: scale(1.1); /* Adjust scaling as needed */
+}
+
+@media only screen and (max-width: 600px) {
+  .profile-background {
+    height: 200px; /* Adjust for smaller screens */
+  }
+}
