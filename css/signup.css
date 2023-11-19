@@ -21,6 +21,34 @@ input {
     border-radius: 5px;
     border: 1px solid gray;
     margin-bottom: 1em;
+    background-repeat: no-repeat;
+    background-position: 5% center;
+    background-size: 20px;
+    text-align: center;
+}
+
+#username {
+    background-image: url('../img/icons/user-icon.svg');
+}
+
+#password {
+    background-image: url('../img/icons/lock-icon.svg');
+}
+
+#email {
+    background-image: url('../img/icons/email-icon.svg');
+}
+
+#phone {
+    background-image: url('../img/icons/phone-icon.svg');
+}
+
+#date-of-birth {
+    background-image: url('../img/icons/calendar-icon.svg');
+}
+
+#confirm-password {
+    background-image: url('../img/icons/pass-confirm-icon.svg');
 }
 
 #btn-submit {
@@ -33,12 +61,6 @@ input {
     background-color: #E0251E;
     color: white;
     cursor: pointer;
-}
-
-#date-of-birth {
-    background-image: url('../img/calendar-iconn.jpg');
-    background-position: 98% center;
-    background-repeat: no-repeat;
 }
 
 #sign-in {
@@ -83,19 +105,19 @@ footer p {
 }
 
 #sign-up-apple {
-    background-image: url('../img/apple-logo.png');
+    background-image: url('../img/logos/apple-logo.png');
     background-position: 1em center;
     background-repeat: no-repeat;
 }
 
 #sign-up-google {
-    background-image: url('../img/google-logo.png');
+    background-image: url('../img/logos/google-logo.png');
     background-position: 1em center;
     background-repeat: no-repeat;
 }
 
 #sign-up-facebook {
-    background-image: url('../img/facebook-logo.png');
+    background-image: url('../img/logos/facebook-logo.png');
     background-position: 1em center;
     background-repeat: no-repeat;
 }

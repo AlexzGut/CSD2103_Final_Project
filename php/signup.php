@@ -33,5 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //   echo "Data inserted successfully!";
 // }
 
-header('location:../html/signup.html');
+header('location: ../index.php');
 mysqli_close($conn);
+?>
