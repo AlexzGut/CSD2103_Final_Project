@@ -1,4 +1,4 @@
-const singup = function() {
+const signup = function() {
     $('#signup-form').submit();
 };
 
@@ -10,5 +10,5 @@ $(function() {
         changeMonth: true,
         yearRange: '-100:+0'});
     
-    $('#btn-submit').on('click', singup);
+    $('#btn-submit').on('click', signup);
 });

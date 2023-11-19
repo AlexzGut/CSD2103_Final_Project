@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 1em;
+}
+
+header {
+    margin-bottom: 2em;
+}
+
+header h1 {
+    font-size: 1.3em;
+    margin: 0;
+}
+
+#back-arrow {
+    position: absolute;
+    z-index: 3;
+}
+
+#back-arrow img {
+    padding: 0.2em 0.2em;
+    width: 25px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    z-index: 3;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+h1 {
+    text-align: center;
+}
+
+#product-img-wrapper {
+    margin-bottom: 2em;
+}
+
+/* --------------------------------------------------- */
+.quantity-buttons {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 1em;
+    width: 12em;
+    background-color: rgb(220, 220, 220);
+}
+
+.value-button {
+    padding: 0.2em 0;
+}
+
+.value-button img {
+    max-height: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+input {
+    border: none;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    width: 3em;
+    background-color: rgb(220, 220, 220);
+}
+
+input:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* --------------------------------------------------- */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+#price-title {
+    color: gray;
+}
+
+#price {
+    color: rgb(63, 173, 63);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.primary-button {
+    color: #ffffff;
+    font-size: 1.05em;
+    font-weight: bold;
+    width: 10em;
+    padding: 1em 1.8em;
+    border-radius: 8px;
+    border: 1px solid gray;
+    background-color: #E0251E;
+}
+

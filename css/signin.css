@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    width: 98%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main,
+footer {
+    padding: 10px;
+}
+
+#signup-form {
+    margin-bottom: 1em;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 1em 0.5em;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 1em;
+    background-repeat: no-repeat;
+    background-position: 5% center;
+    background-size: 20px;
+    text-align: center;
+    font-size: large;
+}
+
+#username {
+    background-image: url('../img/icons/user-icon.svg');
+}
+
+#password {
+    background-image: url('../img/icons/lock-icon.svg');
+}
+
+#btn-submit {
+    width: 100%;
+    padding: 0.7em 0.5em;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #E0251E;
+    color: white;
+    cursor: pointer;
+}
+
+#forgot-password,
+#sign-up {
+    text-align: center;
+}
+
+#forgot-password a {
+    text-decoration: none;
+    color: gray;
+}
+
+#sign-up a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+/* .gray-icon {
+    filter: invert(81%) sepia(9%) saturate(5%) hue-rotate(314deg) brightness(88%) contrast(95%);
+} */
+
+@media screen and (min-width: 481px) {
+
+    main,
+    footer {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    #signup-form {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+}
