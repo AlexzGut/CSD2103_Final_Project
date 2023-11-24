@@ -39,6 +39,15 @@ document.addEventListener("DOMContentLoaded", function () {
             addToCartButton.addEventListener('click', function () {
                 const itemCount = parseInt(itemCountSpan.textContent);
                 if (itemCount > 0) {
+                    let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : {"products": []};
+                    cart["products"].push({
+                        "name": `${item.name}`,
+                        "quantity": `${parseInt(itemCount)}`,
+                        "description": `${item.description}`, 
+                        "unitPrice": `${parseFloat(item.price)}`,
+                        "imagePath": `${item.image}`
+                    });
+                    localStorage.setItem("cart", JSON.stringify(cart));
                     alert(`Added ${itemCount} ${item.name}(s) to the cart`);
                     itemCountSpan.textContent = '0'; // Sayacı sıfırla
                 } else {

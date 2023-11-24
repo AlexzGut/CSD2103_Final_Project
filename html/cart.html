@@ -3,154 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <title> Cart </title>
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/cart.css">
     <script src="../js/cart.js"></script>
 </head>
 <body>
     <header>
-        <div id="close-cart">X</div>
-        <h1> MY CART </h1>
+        <div id="header-wrapper">
+            <nav>
+            <img src="../img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon">
+            <ul id="header-list">
+                <li><a href="../html/menu.html">Menu</a></li>
+                <li><a href="../html/contact-us">Contact Us</a></li>
+                <li><a href="#">Locations</a></li>
+            </ul>
+            </nav>
+            <a href="/CSD2103_Final_Project" id="brand">
+            <h1>Hamburguers - Cart</h1>
+            </a>
+            <div id="header-icons">
+            <a href="signin.html" id="user-link"><img class="white-icon" src="../img/icons/user-icon.svg" alt="sign in icon" width="20">
+                <p id="user-name">Sign In</p>
+            </a>
+            <div id="cart">
+                <a href="#"><img class="white-icon" src="../img/icons/cart-icon.svg" alt="sign in icon" width="20"></a>
+            </div>
+            </div>
+        </div>
     </header>
     <main>
-        <!-- Here the list of products on the list -->
-        <section id="products-in-cart">
-            <article>
-                <div class="product-images">
-                </div>
-                <div class="product-information">
-                    <h3 class="product-name"> Product Name 1</h3>
-                    <p class="product-description"> 
-                        Description. This is the description
-                    </p>
-                    <p class="product-price"> 
-                        $ XX.XX
-                    </p>
-                    <div class="quantity-buttons">
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value"><img src="../img/icons/minus-icon.svg"></div>
-                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value"><img src="../img/icons/plus-icon.svg"></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="product-images">
-                </div>
-                <div class="product-information">
-                    <h3 class="product-name"> Product Name 2</h3>
-                    <p class="product-description"> 
-                        Description. This is the description
-                    </p>
-                    <p class="product-price"> 
-                        $ XX.XX
-                    </p>
-                    <div class="quantity-buttons">
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="product-images">
-                </div>
-                <div class="product-information">
-                    <h3 class="product-name"> Product Name 3</h3>
-                    <p class="product-description"> 
-                        Description. This is the description
-                    </p>
-                    <p class="product-price"> 
-                        $ XX.XX
-                    </p>
-                    <div class="quantity-buttons">
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="product-images">
-                </div>
-                <div class="product-information">
-                    <h3 class="product-name"> Product Name 4</h3>
-                    <p class="product-description"> 
-                        Description. This is the description
-                    </p>
-                    <p class="product-price"> 
-                        $ XX.XX
-                    </p>
-                    <div class="quantity-buttons">
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="product-images">
-                </div>
-                <div class="product-information">
-                    <h3 class="product-name"> Product Name 5</h3>
-                    <p class="product-description"> 
-                        Description. This is the description
-                    </p>
-                    <p class="product-price"> 
-                        $ XX.XX
-                    </p>
-                    <div class="quantity-buttons">
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="number" value="0" class="product-quantity"/> <!-- Here, this id will be created based on the relative product number in the cart -->
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </div>
-                </div>
-            </article>
-        </section>
-        
+        <div id="left-panel">
+            <section id="products-in-cart">
+                <!-- Here the list of products on the cart. -->
+                <p id="no-products-warning">No products in the cart!</p>
+            </section>
+            <div id="comments-section">
+                <!-- Any additional requirements for the order. -->
+                <h3>Additional Requirements</h3>
+                <textarea id="additional-requirements" style="resize:none" rows="5"></textarea>
+            </div>
+        </div>
+
+
         <div id="page-bottom">
             <div id="cart-summary">
+                <!-- Table with the summary of the products in the cart. -->
                 <table>
                     <caption> Summary Cart </caption>
                     <tbody>
-                        <tr>
-                            <td class="col1">
-                                Product 1 
-                            </td>
-                            <td class="col2">
-                                $ XX.XX
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col1">
-                                Product 2 
-                            </td>
-                            <td class="col2">
-                                $ YY.YY
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col1">
-                                Product 3 
-                            </td>
-                            <td class="col2">
-                                $ YY.YY
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col1">
-                                Product 4 
-                            </td>
-                            <td class="col2">
-                                $ YY.YY
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col1">
-                                Product 5 
-                            </td>
-                            <td class="col2">
-                                $ YY.YY
-                            </td>
+                        <tr id="summary-no-products">
+                            <td> No product added yet. </td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -159,7 +64,7 @@
                                     Total
                                 </td>
                                 <td id="col-total-price">
-                                    $ XX.XX 
+                                    $ <span>XX.XX</span>
                                 </td>
                             </tr>
                     </tfoot>
@@ -167,8 +72,8 @@
             </div>
 
             <div id="buttons">
-                <button type="button" class="secondary-button"> Add more items </button>
-                <button type="button" class="primary-button"> Checkout </button>
+                <button type="button" id="edit-cart" class="secondary-button" onclick="addItems()"> Add more items </button>
+                <button type="button" id="checkout-button" class="primary-button"> Checkout </button>
             </div>
         </div>
     </main>
