@@ -31,8 +31,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
       <nav>
         <img src="img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon">
         <ul id="header-list">
-          <li><a href="../html/menu.html">Menu</a></li>
-          <li><a href="../html/contact-us">Contact Us</a></li>
+          <li><a href="html/menu.html">Menu</a></li>
+          <li><a href="html/contact-us">Contact Us</a></li>
           <li><a href="#">Locations</a></li>
         </ul>
       </nav>
