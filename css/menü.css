@@ -76,6 +76,7 @@ footer {
 #pagination {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Yeni eklenen satır: Diğer öğeleri ortalamak için */
 }
 
 @media only screen and (max-width: 600px) {
