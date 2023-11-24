@@ -20,7 +20,7 @@ input {
     padding: 1em 0.5em;
     border-radius: 5px;
     border: 1px solid gray;
-    margin-bottom: 1em;
+    margin-top: 1em;
     background-repeat: no-repeat;
     background-position: 5% center;
     background-size: 20px;
@@ -120,6 +120,12 @@ footer p {
     background-image: url('../img/logos/facebook-logo.png');
     background-position: 1em center;
     background-repeat: no-repeat;
+}
+
+.error {
+    color: red;
+    margin-top: 1em;
+    font-weight: 500;
 }
 
 @media screen and (min-width: 481px) {

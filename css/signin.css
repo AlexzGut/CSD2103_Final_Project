@@ -30,7 +30,7 @@ input {
     padding: 1em 0.5em;
     border-radius: 5px;
     border: 1px solid gray;
-    margin-bottom: 1em;
+    margin-top: 1em;
     background-repeat: no-repeat;
     background-position: 5% center;
     background-size: 20px;
@@ -49,6 +49,7 @@ input {
 #btn-submit {
     width: 100%;
     padding: 0.7em 0.5em;
+    margin-top: 1em;
     font-size: 1.1em;
     font-weight: bold;
     border-radius: 5px;
@@ -77,6 +78,12 @@ input {
 /* .gray-icon {
     filter: invert(81%) sepia(9%) saturate(5%) hue-rotate(314deg) brightness(88%) contrast(95%);
 } */
+
+.error {
+    color: red;
+    margin-top: 1em;
+    font-weight: 500;
+}
 
 @media screen and (min-width: 481px) {
 
