@@ -56,7 +56,7 @@ const createArticles = (cart) => {
                 $("section").css({
                     display: 'flex',
                     flexDirection: 'column',
-                    marginTop: '2%',
+                    marginTop: '80px',
                     marginBottom: '2%',
                     justifyContent: 'flex-start'
                 });
@@ -64,7 +64,7 @@ const createArticles = (cart) => {
                 // Adds a new article with product information
                 $("section").append(
                 `<article id="article-product${n}" class="cart-products ui-state-default">
-                    <div class="product-images">
+                    <div class="product-images"><img src="../img/${element["imagePath"]}">
                     </div>
                     <div class="product-information">
                         <h3 class="product-name"> ${element["name"]}</h3>
@@ -72,7 +72,7 @@ const createArticles = (cart) => {
                             ${element["description"]}
                         </p>
                         <p class="product-price"> 
-                            $ <span>${element["unitPrice"]}</span>
+                            $ <span>${parseFloat(element["unitPrice"]).toFixed(2)}</span>
                         </p>
                         <div class="quantity-buttons">
                             <div class="value-button decrease-button" id="decrease${n}" onclick="decreaseValue(${n})" value="Decrease Value"><img src=${element["quantity"] == 1 ? "../img/icons/trash-can-icon.svg" : "../img/icons/minus-icon.svg"}></div>
@@ -108,45 +108,7 @@ const createArticles = (cart) => {
 
 // Function to add burgers
 
-const addItems = () => {
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    let burgerNumber = Math.round(Math.random()*99 + 1);
-    cart["products"].push({
-        "name": `Burger ${burgerNumber}`,
-        "quantity": Math.round(Math.random() * 5 + 1),
-        "description": `This is the description of burger ${burgerNumber}`, 
-        "unitPrice": (Math.random() * 20).toFixed(2),
-        "imagePath": ""
-    })
-    localStorage.setItem("cart", JSON.stringify(cart));
-    createArticles(cart);
-}
-
-
 $(document).ready(() => {
-    /*var cartToStorage =
-        {"products": [
-            {"name": "Burger 1",
-            "quantity": 1,
-            "description": "This is a description of burger 1",
-            "unitPrice": 10.99,
-            "imagePath": ""},
-
-            {"name": "Burger 2",
-            "quantity": 3,
-            "description": "This is a description of burger 2",
-            "unitPrice": 9.99,
-            "imagePath": ""},
-
-            {"name": "Burger 3",
-            "quantity": 5,
-            "description": "This is a description of burger 3",
-            "unitPrice": 3.99,
-            "imagePath": ""}
-        ]
-    };
-    localStorage.setItem("cart", JSON.stringify(cartToStorage));*/
     let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : {"products": []};
-
     createArticles(cart);
 });

@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 
-#header-wrapper {
+header {
     left: 0;
     position: sticky;
     top: 0;
@@ -13,7 +13,6 @@ body {
     align-items: center;
     display: flex;
 }
-
 
 section p {
     text-align: center;
@@ -31,6 +30,15 @@ article {
 
 .product-images {
     border-right: 1px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-images img {
+    border-radius: 5%;
+    max-height: 80%;
+    max-width: 80%;
 }
 
 .product-information {
@@ -157,7 +165,8 @@ tfoot {
 }
 
 tbody td {
-    vertical-align: bottom;
+    vertical-align: center;
+    font-size: 0.9em;
 }
 
 #cart-summary table tfoot {
@@ -184,4 +193,8 @@ tbody td {
         width: 50%;
     }
     
+    tbody td {
+        font-size: 1em;
+    }    
 }
+
