@@ -7,6 +7,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+header {
+    height: 80px;
+}
+
 #header-wrapper {
     background-color: brown;
     color: #fff;
@@ -67,6 +71,10 @@ a {
 
 .white-icon {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(17deg) brightness(104%) contrast(104%);
+}
+
+img.icon {
+    width: 20px;
 }
 
 @media screen and (min-width: 990px) {
