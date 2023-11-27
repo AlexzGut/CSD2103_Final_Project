@@ -55,17 +55,32 @@ document.addEventListener("DOMContentLoaded", function () {
             addToCartButton.addEventListener('click', function () {
                 const itemCount = parseInt(itemCountInput.value);
                 if (itemCount > 0) {
-                    let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : { "products": [] };
-                    cart["products"].push({
-                        "name": `${item.name}`,
-                        "quantity": `${parseInt(itemCount)}`,
-                        "description": `${item.description}`,
-                        "unitPrice": `${parseFloat(item.price)}`,
-                        "imagePath": `${item.image}`
-                    });
+                    let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : {"products": []};
+                    let flag = false;
+                    let index;
+                    for (let i = 0; i < cart["products"].length; i++) {
+                        console.log(cart["products"][i]);
+                        if (cart["products"][i]["name"] === `${item.name}`){
+                            flag = true;
+                            index = i;
+                            break;
+                        }
+                    }
+                    
+                    if (flag) {
+                        cart["products"][index]["quantity"] = parseInt(cart["products"][index]["quantity"]) + parseInt(itemCount);
+                    } else {
+                        cart["products"].push({
+                            "name": `${item.name}`,
+                            "quantity": `${parseInt(itemCount)}`,
+                            "description": `${item.description}`, 
+                            "unitPrice": `${parseFloat(item.price)}`,
+                            "imagePath": `${item.image}`
+                        });
+                    }
                     localStorage.setItem("cart", JSON.stringify(cart));
                     alert(`Added ${itemCount} ${item.name}(s) to the cart`);
-                    itemCountInput.value = '0'; // Sayacı sıfırla
+                    itemCountSpan.textContent = '0';
                 } else {
                     alert('Please select the quantity first');
                 }
