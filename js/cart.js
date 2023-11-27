@@ -47,13 +47,13 @@ const createArticles = (cart) => {
         $("#comments-section").show();
         $("#summary-no-products").hide();
         $("#cart-summary table tfoot").show();
-        $("section article").remove();
+        $("#products-in-cart article").remove();
         $("#page-bottom #cart-summary table tbody .row-products").remove();
         var totalCart = 0;
         cart["products"].map((element, n) => {
             {
                 // Here start to set the articles when they are added to the cart.
-                $("section").css({
+                $("#products-in-cart").css({
                     display: 'flex',
                     flexDirection: 'column',
                     marginTop: '80px',
@@ -62,7 +62,7 @@ const createArticles = (cart) => {
                 });
                 
                 // Adds a new article with product information
-                $("section").append(
+                $("#products-in-cart").append(
                 `<article id="article-product${n}" class="cart-products ui-state-default">
                     <div class="product-images"><img src="../img/${element["imagePath"]}">
                     </div>
@@ -102,8 +102,8 @@ const createArticles = (cart) => {
         $("#cart-summary table tfoot").hide();
     }
 
-    $( "section" ).sortable();
-    $( "section, article" ).disableSelection();
+    $( "#products-in-cart" ).sortable();
+    $( "#products-in-cart, article" ).disableSelection();
 };
 
 // Function to add burgers

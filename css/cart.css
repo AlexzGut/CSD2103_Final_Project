@@ -3,12 +3,6 @@ body {
     margin: 0;
 }
 
-header {
-    left: 0;
-    position: sticky;
-    top: 0;
-}
-
 #close-cart {
     align-items: center;
     display: flex;
@@ -149,13 +143,15 @@ tfoot {
     border-top: 2px solid black;
 }
 
+#cart-wrapper {
+    display: flex;
+    flex-direction: column;
+}
 
 #page-bottom {
     background-color: white;
-    bottom: 0;
     border-top: #F6F6F6 solid;
     box-sizing: border-box;
-    position: sticky;
     width: 100%;
 }
 
@@ -177,12 +173,16 @@ tbody td {
 }
 
 @media screen and (min-width: 769px) { /* For devices bigger than tablets*/
-    main {
-        width: 50%;
+
+    #cart-wrapper {
+        display: flex;
+        flex-direction: row;
     }
 
     #left-panel {
-        height: 100%;
+        width: 50%;
+        height: 85vh;
+        overflow-y: scroll;
     }
 
     #page-bottom {
@@ -190,9 +190,6 @@ tbody td {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        left: 50%;
-        position: fixed;
-        top: 82px;
         width: 50%;
     }
     
