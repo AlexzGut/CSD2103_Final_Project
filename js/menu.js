@@ -8,11 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const itemsPerPage = 9;
     let currentPage = 0;
-    //     <div class="cart-controls">
-    //     <button class="decrement">-</button>
-    //     <span class="item-count">0</span>
-    //     <button class="increment">+</button>
-    // </div>
+
     function displayMenu() {
         menuContainer.innerHTML = "";
         const startIndex = currentPage * itemsPerPage;
@@ -80,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     localStorage.setItem("cart", JSON.stringify(cart));
                     alert(`Added ${itemCount} ${item.name}(s) to the cart`);
-                    itemCountSpan.textContent = '0';
+                    itemCountInput.value = '0';
                 } else {
                     alert('Please select the quantity first');
                 }
