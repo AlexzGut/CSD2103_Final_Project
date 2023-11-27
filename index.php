@@ -2,6 +2,8 @@
 // Start the session
 if (session_status() !== PHP_SESSION_ACTIVE) {
   session_start();
+  $userInfo = $_SESSION['JSON_USER_INFO'] ?? 'null';
+  echo "<script> localStorage.setItem('userInfo', '$userInfo'); </script>";
 }
 ?>
 
@@ -15,13 +17,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/index.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script>
-    var JSON_USER_INFO = '<?php if (session_status() == PHP_SESSION_ACTIVE) {
-                            echo $_SESSION['JSON_USER_INFO'] ?? null;
-                          } ?>';
-  </script>
   <script src="js/header.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/userInfo.js"></script>
 </head>
 
 <body>
@@ -31,12 +28,12 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
       <nav>
         <img src="img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon">
         <ul id="header-list">
-          <li><a href="html/menu.html">Menu</a></li>
+          <li><a href="php/getItemsMenu.php">Menu</a></li>
           <li><a href="html/contact-us">Contact Us</a></li>
           <li><a href="#">Locations</a></li>
         </ul>
       </nav>
-      <a href="/" id="brand">
+      <a href="../Final_Project/index.php" id="brand">
         <h1>Hamburguers</h1>
       </a>
       <div id="header-icons">
@@ -44,7 +41,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
           <p id="user-name">Sign In</p>
         </a>
         <div id="cart">
-          <a href="#"><img class="white-icon" src="img/icons/cart-icon.svg" alt="sign in icon" width="20"></a>
+          <a href="html/cart.html"><img class="white-icon" src="img/icons/cart-icon.svg" alt="sign in icon" width="20"></a>
         </div>
       </div>
     </div>
