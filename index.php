@@ -28,13 +28,13 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
       <nav>
         <img src="img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon">
         <ul id="header-list">
-          <li><a href="php/getItemsMenu.php">Menu</a></li>
+          <li><a href="html/menu.html">Menu</a></li>
           <li><a href="html/contact-us">Contact Us</a></li>
           <li><a href="#">Locations</a></li>
         </ul>
       </nav>
       <a href="../Final_Project/index.php" id="brand">
-        <h1>Hamburguers</h1>
+        <h1>Hamburgers</h1>
       </a>
       <div id="header-icons">
         <a href="html/signin.html" id="user-link"><img class="white-icon" src="img/icons/user-icon.svg" alt="sign in icon" width="20">
@@ -47,13 +47,37 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     </div>
   </header>
 
-  <section id="hero">
-    <picture>
-      <source media="(min-width: 990px)" srcset="img/hero/burger-hero-desktop.webp">
-      <source media="(min-width: 481px)" srcset="img/hero/burger-hero-mobile.jpg">
-      <img src="img/hero/burger-hero-mobile.jpg" alt="">
-    </picture>
-  </section>
+  <main>
+    <section id="hero">
+      <picture>
+        <source media="(min-width: 990px)" srcset="img/hero/burger-hero-desktop.webp">
+        <source media="(min-width: 481px)" srcset="img/hero/burger-hero-mobile.jpg">
+        <img src="img/hero/burger-hero-mobile.jpg" alt="">
+      </picture>
+    </section>
+
+    <section id="split-body">
+      <div>
+        <img src="img/index/burger-1.avif" alt="">
+      </div>
+      <div class="desc-half">
+        <div class="description">
+          <h1>Burgers are everything</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, obcaecati quaerat! In, maxime unde? Debitis ipsam natus cum, repellendus molestiae sapiente ab alias neque ducimus culpa nam laudantium eos corporis.</p>
+        </div>
+      </div>
+
+      <div class="desc-half">
+        <div class="description">
+          <h1>French Fries</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, obcaecati quaerat! In, maxime unde? Debitis ipsam natus cum, repellendus molestiae sapiente ab alias neque ducimus culpa nam laudantium eos corporis.</p>
+        </div>
+      </div>
+      <div>
+        <img src="img/index/fries.webp" alt="">
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

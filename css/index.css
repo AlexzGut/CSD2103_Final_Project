@@ -1,3 +1,32 @@
 #hero img {
     width: 100%;
 }
+
+#split-body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-image: url('../img/index/brick-background.png');
+}
+
+#split-body img {
+    width: 100%;
+}
+
+.desc-half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    margin: 0 6em;
+    text-align: center;
+}
+
+.description h1 {
+    font-size: 3em;
+    /* 1 pixel black shadow to left, top, right and bottom */
+    -webkit-text-stroke: 1.5px #ac1f2d;
+    -webkit-text-fill-color: white;
+}

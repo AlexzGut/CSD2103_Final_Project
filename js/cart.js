@@ -64,7 +64,7 @@ const createArticles = (cart) => {
                 // Adds a new article with product information
                 $("#products-in-cart").append(
                 `<article id="article-product${n}" class="cart-products ui-state-default">
-                    <div class="product-images"><img src="../img/${element["imagePath"]}">
+                    <div class="product-images"><img src="../img/menu/burgers/${element["imagePath"]}">
                     </div>
                     <div class="product-information">
                         <h3 class="product-name"> ${element["name"]}</h3>

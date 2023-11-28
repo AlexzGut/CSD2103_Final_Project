@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const section = document.createElement("section");
             section.innerHTML = `
             <div class="item-wrapper">
-                <img src="../img/${item.image}" alt="${item.name}">
+                <img src="../img/menu/burgers/${item.image}" alt="${item.name}">
                 <div class="details-container">
                     <div class="details-wrapper">
                         <h2>${item.name}</h2>
@@ -51,25 +51,25 @@ document.addEventListener("DOMContentLoaded", function () {
             addToCartButton.addEventListener('click', function () {
                 const itemCount = parseInt(itemCountInput.value);
                 if (itemCount > 0) {
-                    let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : {"products": []};
+                    let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : { "products": [] };
                     let flag = false;
                     let index;
                     for (let i = 0; i < cart["products"].length; i++) {
                         console.log(cart["products"][i]);
-                        if (cart["products"][i]["name"] === `${item.name}`){
+                        if (cart["products"][i]["name"] === `${item.name}`) {
                             flag = true;
                             index = i;
                             break;
                         }
                     }
-                    
+
                     if (flag) {
                         cart["products"][index]["quantity"] = parseInt(cart["products"][index]["quantity"]) + parseInt(itemCount);
                     } else {
                         cart["products"].push({
                             "name": `${item.name}`,
                             "quantity": `${parseInt(itemCount)}`,
-                            "description": `${item.description}`, 
+                            "description": `${item.description}`,
                             "unitPrice": `${parseFloat(item.price)}`,
                             "imagePath": `${item.image}`
                         });
@@ -98,34 +98,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function updatePaginationButtons() {
-        prevPageButton.disabled = currentPage <= 0;
-        nextPageButton.disabled = (currentPage + 1) * itemsPerPage >= menuData.length;
-    }
+    const retrieveProducts = function () {
+        console.log($('#search-product').val());
+        $.ajax({
+            url: '../php/getItemsMenu.php', //path to the PHP file
+            method: 'POST',
+            data: { name: $('#search-product').val() },
+            dataType: 'json',
+            success: function (products) {
+                // Handle the returned JSON data
+                menuData.splice(0, menuData.length); // clears products data.
+                menuData.push(...products); // populate manuData array with the data returned from the server.
+                displayMenu(); 
+            }
+        });
+    };
 
-    prevPageButton.addEventListener("click", function () {
-        if (currentPage > 0) {
-            currentPage--;
-            displayMenu();
-            updatePaginationButtons();
-        }
-    });
+    $('#search-product').on('input', retrieveProducts);
 
-    nextPageButton.addEventListener("click", function () {
-        const lastPage = Math.ceil(menuData.length / itemsPerPage) - 1;
-        if (currentPage < lastPage) {
-            currentPage++;
-            displayMenu();
-            updatePaginationButtons();
-        }
-    });
-
-    let productInfo = JSON.parse(localStorage.getItem('productInfo'));
-
-    const sampleMenuData = productInfo;
-
-    menuData.push(...sampleMenuData);
-
-    displayMenu();
-    updatePaginationButtons();
+    retrieveProducts();
 });

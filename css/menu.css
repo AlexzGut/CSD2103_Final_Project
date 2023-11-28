@@ -107,7 +107,7 @@ footer {
     min-width: 20px;
 }
 
-input {
+.item-count {
     border: none;
     padding: 0;
     text-align: center;
@@ -117,7 +117,7 @@ input {
     background-color: rgb(220, 220, 220);
 }
 
-input:focus {
+.item-count:focus {
     outline: none;
 }
 
@@ -135,11 +135,11 @@ input[type=number] {
 .item-wrapper {
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
 }
 
 .details-container {
-    border: 0.5px solid gray;
-    border-radius: 0 0 5px 5px;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -153,6 +153,26 @@ input[type=number] {
 .in-dec {
     display: flex;
     justify-content: space-evenly;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+#search-product {
+    background-image: url('../img/icons/lookup-icon.svg');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-size: 20px;
+    padding: 1em 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(231, 231, 231);
+    margin: 1em auto;
+    display: block;
 }
 
 @media only screen and (max-width: 600px) {
