@@ -14,7 +14,16 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sqlstatement = "SELECT * FROM hamburgers";
+
+//echo $filtervalue;
+
+if (empty($_POST['name'])) {
+    $sqlstatement = "SELECT * FROM hamburgers";
+} else {
+    $filtervalue = $_POST['name'];
+    $sqlstatement = "SELECT * FROM hamburgers WHERE name LIKE '%$filtervalue%'";
+}
+
 $resultset = mysqli_query($conn, $sqlstatement);
 
 $products = array();
@@ -28,10 +37,9 @@ if (mysqli_num_rows($resultset) > 0) {
         array_push($products, $product);
     }
 
-    $productInfo = json_encode($products);
-    echo ("<script> localStorage.setItem('productInfo', '$productInfo'); </script>");
-    echo("<script>window.location = '../html/menu.html';</script>");
+    echo json_encode($products);
 
     } 
     
 mysqli_close($conn);
+?>

@@ -10,7 +10,7 @@ const stringToJSON = function() {
 const updateUserName = function() {
     const userInfo = stringToJSON();
     if (userInfo) {
-        $('#user-name').html(`${userInfo.firstname} ${userInfo.lastname}`);
+        $('#user-name').html(`Welcome ${userInfo.firstname}!`);
         if (location.href.endsWith('index.php')) {
             $('#user-link').attr('href', 'html/myaccount.html');
         } else {
