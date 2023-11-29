@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const retrieveProducts = function () {
-        console.log($('#search-product').val());
         $.ajax({
             url: '../php/getItemsMenu.php', //path to the PHP file
             method: 'POST',
