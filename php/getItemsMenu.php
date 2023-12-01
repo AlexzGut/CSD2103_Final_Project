@@ -20,7 +20,7 @@ if (!$conn) {
 if (empty($_POST['name'])) {
     $sqlstatement = "SELECT * FROM hamburgers";
 } else {
-    $filtervalue = $_POST['name'];
+    $filtervalue = mysqli_real_escape_string($conn, $_POST['name']);
     $sqlstatement = "SELECT * FROM hamburgers WHERE name LIKE '%$filtervalue%'";
 }
 

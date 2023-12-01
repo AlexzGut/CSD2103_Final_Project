@@ -75,7 +75,7 @@ div h3, p {
     width: 80%;
 }
 
-input {
+.product-quantity {
     border: none;
     padding: 0;
     text-align: center;
@@ -85,8 +85,8 @@ input {
 }
 
 /* Hides the arrows for input */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.product-quantity::-webkit-outer-spin-button,
+.product-quantity::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -148,11 +148,49 @@ tfoot {
     flex-direction: column;
 }
 
+#delivery-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+#delivery-wrapper div {
+    display: inline;
+}
+
+.pickadate {
+    margin-bottom: 2%;
+    margin-top: 1%;
+    width: 100%;
+}
+
 #page-bottom {
     background-color: white;
     border-top: #F6F6F6 solid;
     box-sizing: border-box;
     width: 100%;
+}
+
+#date-time-deliver-label {
+    display: block;
+    margin-top: 3%;
+}
+
+#date-error {
+    color: red;
+}
+
+#delivery-type {
+    border: solid 1px black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 80%;
+}
+
+#delivery-wrapper div {
+    margin-bottom: 2%;
 }
 
 #buttons {
