@@ -26,17 +26,19 @@ header {
 }
 
 main {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 20px;
     width: 80%;
     margin: auto;
 }
 
 section {
+    width: 20em;
     padding: 10px;
     text-align: center;
+    margin-bottom: 1em;
 }
 
 img {
