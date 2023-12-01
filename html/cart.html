@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <title> Cart </title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/plugin/default.css">
+    <link rel="stylesheet" href="../css/plugin/default.date.css">
+    <link rel="stylesheet" href="../css/plugin/default.time.css">
     <script src="../js/header.js"></script>
     <script src="../js/userInfo.js"></script>
     <script src="../js/cart.js"></script>
+    <script src="../js/plugin/picker.js"></script>
+    <script src="../js/plugin/picker.date.js"></script>
+    <script src="../js/plugin/picker.time.js"></script>
 </head>
 
 <body>
@@ -51,7 +57,25 @@
                 <div id="comments-section">
                     <!-- Any additional requirements for the order. -->
                     <h3>Additional Requirements</h3>
-                    <textarea id="additional-requirements" style="resize:none" rows="5"></textarea>
+                    <div id="delivery-type">
+                        <h4>Select your type of deliver</h4>
+                        <div id="delivery-wrapper">
+                            <div>
+                                <input type="radio" id="delivery" name="deliver-type" value="deliver">
+                                <label for="delivery">Delivery</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="carryout" name="deliver-type" value="carryout">
+                                <label for="carryout">Carryout</label>
+                            </div>
+                        </div>
+                        <form id="date-time-picker" style="display: none">
+                            <label id="date-time-deliver-label"> Select day and a time to <span id="order-method">deliver</span> your order </label>
+                            <input type="date" class="datepicker pickadate" id="date-picker" placeholder="Select a day..." name="date-picker" required>
+                            <input type="date" class="timepicker pickadate" id="date-picker" placeholder="Select a time...">
+                            <label id="date-error" style="display: none"> Please pick a date in the future. </label>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -80,7 +104,7 @@
                 </div>
 
                 <div id="buttons">
-                    <button type="button" id="edit-cart" class="secondary-button" onclick="addItems()"> Add more items
+                    <button type="button" id="edit-cart" class="secondary-button" onclick="location.href='./menu.html';"> Add more items
                     </button>
                     <button type="button" id="checkout-button" class="primary-button"> Checkout </button>
                 </div>

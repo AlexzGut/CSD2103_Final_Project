@@ -63,7 +63,7 @@ const createArticles = (cart) => {
                 
                 // Adds a new article with product information
                 $("#products-in-cart").append(
-                `<article id="article-product${n}" class="cart-products ui-state-default">
+                `<article id="article-product${n}">
                     <div class="product-images"><img src="../img/menu/burgers/${element["imagePath"]}">
                     </div>
                     <div class="product-information">
@@ -101,9 +101,6 @@ const createArticles = (cart) => {
         $("#summary-no-products").show();
         $("#cart-summary table tfoot").hide();
     }
-
-    $( "#products-in-cart" ).sortable();
-    $( "#products-in-cart, article" ).disableSelection();
 };
 
 // Function to add burgers
@@ -111,4 +108,57 @@ const createArticles = (cart) => {
 $(document).ready(() => {
     let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : {"products": []};
     createArticles(cart);
+    var date = new Date();
+    
+    $('.datepicker').pickadate({
+        min: new Date(date.getFullYear(), date.getMonth() , date.getDate()),
+        max: new Date(date.getFullYear() + 1 , date.getMonth(), date.getDate())
+    });
+    $('.timepicker').pickatime({
+        format: 'HH:i',
+        formatLabel: 'HH:i',
+        min: [7,30],
+        max: [23,59],
+        interval: 15
+    });
+    
+    const checkTime = () => {
+        if($(".datepicker").val() && $(".timepicker").val()) {
+            let dateNow = new Date();
+            let dateSelected = new Date($(".datepicker").val());
+            let timeSelected = $(".timepicker").val();
+            let index = timeSelected.indexOf(":");
+            let hour = parseInt(timeSelected.substring(0,index));
+            let mins = parseInt(timeSelected.substring(index + 1));
+            if (dateSelected.getDate() == dateNow.getDate() && dateSelected.getMonth() == dateNow.getMonth() && dateSelected.getDate() == dateNow.getDate()) {
+                if ( hour < dateNow.getHours() || (hour == dateNow.getHours() && mins < dateNow.getMinutes())) {
+                    $("#date-error").show();
+                } else {
+                    $("#date-error").hide();
+                }
+            } else {
+                $("#date-error").hide();
+            }
+        }
+    }
+
+    const radioButtonChang = () => {
+        
+        var e = document.getElementsByName('deliver-type');
+            $('#date-time-picker').slideDown("slow");
+            for (i = 0; i < e.length; i++) {
+                if (e[i].checked){
+                    $('#order-method').text(e[i].value);
+                }
+
+            }
+        }
+
+
+    $('.datepicker').on('change', () => checkTime());
+    $('.timepicker').on('change', () => checkTime());
+    
+    $('#carryout').on('change', () => radioButtonChang());
+    $('#delivery').on('change', () => radioButtonChang());
+
 });
