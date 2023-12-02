@@ -18,7 +18,7 @@ $(document).ready(function() {
     };
 
     $('.button-logout, .logoutUser').on('click', logout);
-
+  
 });
 
 
