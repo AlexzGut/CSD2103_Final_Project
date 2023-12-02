@@ -145,7 +145,10 @@ $(document).ready(() => {
     const radioButtonChang = () => {
         
         var e = document.getElementsByName('deliver-type');
-            $('#date-time-picker').slideDown("slow");
+            $('#date-time-picker').slideDown("slow", () => {
+                window.location = '#span';
+            });
+
             for (i = 0; i < e.length; i++) {
                 if (e[i].checked){
                     $('#order-method').text(e[i].value);
