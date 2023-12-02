@@ -4,17 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" 
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" 
-    integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>My Account Page</title>
     <link rel="stylesheet" href="../css/myaccount.css">
     <link rel="stylesheet" href="../css/header.css">
     <script src="../js/myaccount.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/userInfo.js"></script>
-    
 </head>
 <body>
   <header>
@@ -44,6 +42,7 @@
   </header>
 
   <main>
+
     <section class="profile-top">
       <div class="profile-background">
         <div class="profile-picture">
@@ -57,58 +56,122 @@
         <h2>Name Here</h2>
       </div>
       <div class="details-container"> <!-- These are just placeholders until we get the data from the database for the logged in user-->
-        <p>Name: John Doe</p> 
-        <p>Number: ***-***-9999</p>
         <p>Delivery Address: Delivery address</p>
+        <p>Number: ***-***-9999</p>
         <p>Email Address: email@email.com</p>
       </div>
     </section>
 
-    <section class="edit-account-form hidden">
-      <h2>Edit Account Information</h2>
-      <form id="account-info-form">
-        <label for="newName">Name:</label>
-        <input type="text" id="newName" name="newName" placeholder="Enter new name">
-  
-        <label for="newNumber">Number:</label>
-        <input type="tel" id="newNumber" name="newNumber" placeholder="Enter new number">
-  
-        <label for="newAddress">Delivery Address:</label>
-        <textarea id="newAddress" name="newAddress" placeholder="Enter new address"></textarea>
-  
-        <label for="newName">Email Address:</label>
-        <input type="email" id="newEmail" name="newEmail" placeholder="Enter new email address">        
-        
-        <button type="submit" class="button-saveChanges">Save Changes</button>
-        <button type="cancel" class="button-cancelChanges">Cancel</button>
-      </form>
-    </section>
-
     <section class="profile-buttons">
-        <div class="button-container">
-          <div class="button-wrapper">
-            <button><img src="../img/icons/myaccount-icon.svg" class="button-accountEdit"></button>
-            <span class="button-label editAccount">Edit Account Info</span>
-          </div>
-          <div class="button-wrapper">
-            <button><img src="../img/icons/mywallet-icon.svg" class="button-walletEdit"></button>
-            <span class="button-label">Update Wallet</span>
-          </div>
-          <div class="button-wrapper">
-            <button><img src="../img/icons/myactivity-icon.svg" class="button-activity"></button>
-            <span class="button-label">Review Activity</span>
-          </div>
-          <div class="button-wrapper">
-            <button><img src="../img/icons/help-icon.svg" class="button-help"></button>
-            <span class="button-label">Help</span>
-          </div>
-          <div class="button-wrapper">
-            <button><img src="../img/icons/logout-icon.svg" class="button-logout"></button>
-            <span class="button-label">Logout</span>
-          </div>          
-        </div>
+    <div id="accordion-edit-account">
+      <h3>Edit Account Info</h3>
+      <section class="edit-account-form">
+        <form id="account-info-form">
+          <label for="newName">Name:</label>
+          <input type="text" id="newName" name="newName" placeholder="Enter new name">
+    
+          <label for="newNumber">Delivery Contact Number:</label>
+          <input type="tel" id="newNumber" name="newNumber" placeholder="Enter new number">
+    
+          <label for="newAddress">Delivery Address:</label>
+          <textarea id="newAddress" name="newAddress" placeholder="Enter new address"></textarea>
+    
+          <label for="newName">Email Address:</label>
+          <input type="email" id="newEmail" name="newEmail" placeholder="Enter new email address">        
+          
+          <button type="submit" class="button-saveAccountChanges">Save Changes</button>
+          <button type="cancel" class="button-cancelAccountChanges">Cancel</button>
+        </form>
       </section>
+      <h3>Update Wallet</h3>
+      <section class="edit-wallet-form">
+        <form id="account-info-form">
+          <label for="creditcardNumber">Credit Card Number:</label>
+          <input type="number" id="creditcardNumber" name="creditcardNumber" placeholder="Enter Credit Card Number">
+    
+          <label for="creditcardExpiry">Credit Card Expiry:</label>
+          <input type="text" id="creditcardExpiry" name="creditcardExpiry" placeholder="MM/YY">
+    
+          <label for="creditcardVerification">CCV:</label>
+          <input type="text" name="creditcardVerification" placeholder="Enter CCV (XXX)"></textarea>
+    
+          <button type="submit" class="button-saveWalletChanges">Save Changes</button>
+          <button type="cancel" class="button-cancelWalletChanges">Cancel</button>
+        </form>
+      </section>  
+      <h3>Review Activity</h3>
+      <div>
+        <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+        Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+        <ul>
+          <li>List item one</li>
+          <li>List item two</li>
+          <li>List item three</li>
+        </ul>
+      </div>
+      <h3>Help (FAQs)</h3>
+      <div>
+        <div id="accordion-help-faq">
+          <h3>How do I place an order online?</h3>
+          <div>
+            <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget.
+            Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
+            condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
+            Nam mi. Proin viverra leo ut odio.</p>
+          </div>
+          <h3>What payment methods do you accept?</h3>
+          <div>
+            <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+            Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+            faucibus interdum tellus libero ac justo.</p>
+          </div>
+          <h3>Can I customize my burger order?</h3>
+          <div>
+            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+          </div>
+          <h3>What are your delivery options and fees?</h3>
+          <div>
+            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+          </div>
+          <h3>Do you offer vegetarian or vegan options?</h3>
+          <div>
+            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+          </div>
+          <h3>What if I have food allergies?</h3>
+          <div>
+            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+          </div>
+          <h3>Is there a minimum order amount for delivery?</h3>
+          <div>
+            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+          </div>
+          <h3>What is your refund or return policy?</h3>
+          <div>
+            <p>We aim for customer satisfaction. 
+              In the event of an issue with your order, please contact our customer support team, and we'll work to resolve it promptly.</p>
+          </div>
+          <h3>Are nutritional details available for your menu items?</h3>
+          <div>
+            <p>Yes, we provide nutritional information for our menu items. 
+              You can find this information on our website or by requesting it from our customer support.</p>
+          </div>
+        </div>
+      </div>
+      <h3 id="logoutUser">Logout</h3>
+      <div class="button-wrapper">
+        <button><img src="../img/icons/logout-icon.svg" class="button-logout"></button>
+        <span class="button-label logoutUser">Click here to Logout</span>
+      </div> 
+    </div>
+    </section>   
+  
   </main>
+
 
   <footer>
     <!-- Placeholder for footer -->
