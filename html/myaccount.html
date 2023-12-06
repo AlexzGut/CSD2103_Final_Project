@@ -53,12 +53,12 @@
 
     <section class="mid-section">
       <div class="name-container">
-        <h2>Name Here</h2>
+        <h2 id="user-name-placeholder">Name Here</h2>
       </div>
-      <div class="details-container"> <!-- These are just placeholders until we get the data from the database for the logged in user-->
+      <div class="details-container"> 
         <p>Delivery Address: Delivery address</p>
-        <p>Number: ***-***-9999</p>
-        <p>Email Address: email@email.com</p>
+        <p>Number: <span id="user-phone-placeholder">***-***-9999</span></p>
+        <p>Email Address: <span id="user-email-placeholder">email@email.com</span></p>
       </div>
     </section>
 
@@ -93,7 +93,7 @@
           <input type="text" id="creditcardExpiry" name="creditcardExpiry" placeholder="MM/YY">
     
           <label for="creditcardVerification">CCV:</label>
-          <input type="text" name="creditcardVerification" placeholder="Enter CCV (XXX)"></textarea>
+          <input type="text" id="creditcardVerification" name="creditcardVerification" placeholder="Enter CCV (XXX)"></textarea>
     
           <button type="submit" class="button-saveWalletChanges">Save Changes</button>
           <button type="cancel" class="button-cancelWalletChanges">Cancel</button>
@@ -114,41 +114,39 @@
         <div id="accordion-help-faq">
           <h3>How do I place an order online?</h3>
           <div>
-            <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget.
-            Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
-            condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
-            Nam mi. Proin viverra leo ut odio.</p>
+            <p>To place an order, simply navigate to our website, select the "Order Now" button, 
+              choose your desired items from the menu, and proceed to checkout. You can also 
+              place orders through our mobile app.</p>
           </div>
           <h3>What payment methods do you accept?</h3>
           <div>
-            <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
-            Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
-            faucibus interdum tellus libero ac justo.</p>
+            <p>We accept various payment methods, including credit/debit cards, PayPal, and 
+              sometimes cash on delivery. You can find specific details at the checkout.</p>
           </div>
           <h3>Can I customize my burger order?</h3>
           <div>
-            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+            <p>Absolutely! You can customize your burger by adding or removing ingredients. Just 
+              select the "Customize" option while placing your order online.</p>
           </div>
           <h3>What are your delivery options and fees?</h3>
           <div>
-            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+            <p>We offer delivery within a specified radius from our locations. Delivery fees may vary 
+              based on distance. For more information, check our delivery details on the website.</p>
           </div>
           <h3>Do you offer vegetarian or vegan options?</h3>
           <div>
-            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+            <p>Yes, we do! We have a variety of vegetarian and vegan burger options on our menu. Look 
+              for specific labels or inquire while placing your order.</p>
           </div>
           <h3>What if I have food allergies?</h3>
           <div>
-            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+            <p>We take allergies seriously. While we strive to accommodate allergies, please inform 
+              us while placing your order and consult our allergen information available on the website.</p>
           </div>
           <h3>Is there a minimum order amount for delivery?</h3>
           <div>
-            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-            Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+            <p>Minimum order requirements for delivery may vary based on location. Check the website 
+              or app for specific information regarding minimum order amounts..</p>
           </div>
           <h3>What is your refund or return policy?</h3>
           <div>
