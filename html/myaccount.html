@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+    
     <title>My Account Page</title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/myaccount.css">
@@ -54,8 +57,8 @@
         <h2 id="user-name-placeholder">Name Here</h2>
       </div>
       <div class="details-container"> 
-        <p>Delivery Address: Delivery address</p>
-        <p>Number: <span id="user-phone-placeholder">***-***-9999</span></p>
+        <p>Delivery Address: Please update your delivery address</p>
+        <p>Number: <span id="user-phone-placeholder">***-***-XXXX</span></p>
         <p>Email Address: <span id="user-email-placeholder">email@email.com</span></p>
       </div>
     </section>
@@ -64,10 +67,13 @@
     <div id="accordion-edit-account">
       <h3>Edit Account Info</h3>
       <section class="edit-account-form">
-        <form id="account-info-form">
-          <label for="newName">Name:</label>
-          <input type="text" id="newName" name="newName" placeholder="Enter new name">
+        <form id="account-info-form" action="../php/myaccountUpdate.php" method="POST">
+          <label for="newfName">First Name:</label>
+          <input type="text" id="newfName" name="newfName" placeholder="Enter first name">
     
+          <label for="newlName">Last Name:</label>
+          <input type="text" id="newlName" name="newlName" placeholder="Enter last name">
+
           <label for="newNumber">Delivery Contact Number:</label>
           <input type="tel" id="newNumber" name="newNumber" placeholder="Enter new number">
     
