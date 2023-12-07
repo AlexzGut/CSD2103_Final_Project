@@ -7,10 +7,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header {
-    height: 80px;
-}
-
 #header-wrapper {
     background-color: brown;
     color: #fff;
@@ -37,12 +33,12 @@ nav {
     margin: 0;
     padding-top: 1em;
     position: fixed;
-    bottom: 0;
+    top: 80px;
     left: 0;
     text-align: center;
     background-color: brown;
     padding-left: 0;
-    width: 100%;
+    width: 50%;
     font-size: 1.2em
 }
 
@@ -81,6 +77,7 @@ img.icon {
 
     header {
         display: block;
+        height: 80px;
     }
 
     nav {
@@ -139,8 +136,4 @@ img.icon {
         align-items: center;
         gap: 1em;
     }
-
-
-
-
 }
