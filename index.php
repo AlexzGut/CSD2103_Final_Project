@@ -35,7 +35,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         </ul>
       </nav>
       <a href="../Final_Project/index.php" id="brand">
-        <h1>One Less Burger</h1>
+      <img src="img/icons/burger-icon.svg" alt="" id="brand-logo" class="white-icon">
+        <h1 id="brand-name">One Less Burger</h1>
       </a>
       <div id="header-icons">
         <a href="html/signin.html" id="user-link"><img class="white-icon" src="img/icons/user-icon.svg" alt="sign in icon" width="20">

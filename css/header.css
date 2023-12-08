@@ -7,6 +7,16 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#brand-logo {
+    display: inline;
+    width: 80px;
+    padding: 10px;
+}
+
+#brand-name {
+    display: none;
+}
+
 #header-wrapper {
     background-color: brown;
     color: #fff;
@@ -22,10 +32,12 @@ body {
 
 #menu-mobile {
     width: 20px;
+    margin-right: .5em;
 }
 
 nav {
     margin-left: 1em;
+    display: flex;
 }
 
 #header-list {
@@ -79,6 +91,14 @@ img.icon {
         display: block;
         height: 80px;
     } */
+
+    #brand-logo {
+        display: none;
+    }
+    
+    #brand-name {
+        display: block;
+    }
 
     nav {
         margin-left: 2em;
