@@ -1,73 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
-    <link rel="stylesheet" href="../css/signin.css">
+    <title>Contact Us</title>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/contact-us.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
-    <script src="../js/signin.js"></script>
-    <script src="../js/header.js"></script>
 </head>
-
 <body>
     <header>
         <div id="header-wrapper">
             <nav>
-                <img src="../img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon icon">
+                <img src="../img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon">
                 <ul id="header-list">
                     <li><a href="../html/menu.html">Menu</a></li>
                     <li><a href="../html/contact-us.html">Contact Us</a></li>
                     <li><a href="#">Locations</a></li>
                 </ul>
             </nav>
-            <a href="../index.php" id="brand">
+            <a href="/CSD2103_Final_Project" id="brand">
                 <h1>One Less Burger</h1>
             </a>
             <div id="header-icons">
-                <a href="../html/signin.html" id="user-link"><img class="white-icon icon"
-                        src="../img/icons/user-icon.svg" alt="sign in icon" width="20">
+                <a href="signin.html" id="user-link"><img class="white-icon" src="../img/icons/user-icon.svg"
+                        alt="sign in icon" width="20">
                     <p id="user-name">Sign In</p>
                 </a>
                 <div id="cart">
-                    <a href="../html/cart.html"><img class="white-icon icon" src="../img/icons/cart-icon.svg"
-                            alt="sign in icon" width="20"></a>
+                    <a href="#"><img class="white-icon" src="../img/icons/cart-icon.svg" alt="sign in icon"
+                            width="20"></a>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <h1>Sign In</h1>
-        <p>Sign In to your account and start enjoying our products.</p>
-        <div>
-            <form id="signin-form" action="../php/signin.php" method="post">
-                <input type="text" name="username" id="username" placeholder="username">
-                <span id="username-error"></span>
-                <input type="password" name="password" id="password" placeholder="password">
-                <span id="password-error"></span>
-                <div>
-                    <input type="checkbox" name="terms-cond" id="terms-cond"><span>I agree to Hamburgers's
-                        Terms of Use and Privacy Policy</span>
-                </div>
-            </form>
+        <div class="wrapper">
+
+
+        <div class="contactus-container">
+            <section class="form-container">
+                <h2>Get in Touch.</h2>
+                <p><i>Please fill out the form and we will be in touch right away.</i></p>
+                <form action="mailto:c0865239@mylambton.ca" method="POST" class="contact-form">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" required>
+
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="help">How can we help?</label>
+                    <textarea id="help" name="help" rows="15" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
         </div>
-        <div>
-            <button id="btn-submit">Sign In</button>
-        </div>
-        <div id="forgot-password">
-            <p><a href="#">Forgot password?</a></p>
-        </div>
-        <div id="sign-up">
-            <p>Don't have an account? <a href="../html/signup.html">Sign Up</a></p>
-        </div>
+    </div>
     </main>
     <footer>
         <div class="f-col">
@@ -116,7 +111,5 @@
             <p>&copy; 2023 One Less Burger, Inc.</p>
         </div>
     </footer>
-
 </body>
-
 </html>

@@ -13,6 +13,7 @@
     <title>My Account Page</title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/myaccount.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <script src="../js/myaccount.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/userInfo.js"></script>
@@ -24,12 +25,12 @@
         <img src="../img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon">
         <ul id="header-list">
           <li><a href="../html/menu.html">Menu</a></li>
-          <li><a href="../html/contact-us">Contact Us</a></li>
+          <li><a href="../html/contact-us.html">Contact Us</a></li>
           <li><a href="#">Locations</a></li>
         </ul>
       </nav>
       <a href="../index.php" id="brand">
-        <h1>Hamburgers</h1>
+        <h1>One Less Burger</h1>
       </a>
       <div id="header-icons">
         <a href="../html/signin.html" id="user-link"><img class="white-icon" src="../img/icons/user-icon.svg" alt="sign in icon" width="20">
@@ -57,9 +58,9 @@
         <h2 id="user-name-placeholder">Name Here</h2>
       </div>
       <div class="details-container"> 
-        <p>Delivery Address: Please update your delivery address</p>
-        <p>Number: <span id="user-phone-placeholder">***-***-XXXX</span></p>
-        <p>Email Address: <span id="user-email-placeholder">email@email.com</span></p>
+        <p>Delivery address: <span id="user-address-placeholder"></span></p>
+        <p>Telephone number: <span id="user-phone-placeholder"></span></p>
+        <p>Email address: <span id="user-email-placeholder"></span></p>
       </div>
     </section>
 
@@ -69,22 +70,21 @@
       <section class="edit-account-form">
         <form id="account-info-form" action="../php/myaccountUpdate.php" method="POST">
           <label for="newfName">First Name:</label>
-          <input type="text" id="newfName" name="newfName" placeholder="Enter first name">
+          <input type="text" id="newfName" name="newfName">
     
           <label for="newlName">Last Name:</label>
-          <input type="text" id="newlName" name="newlName" placeholder="Enter last name">
+          <input type="text" id="newlName" name="newlName">
 
           <label for="newNumber">Delivery Contact Number:</label>
-          <input type="tel" id="newNumber" name="newNumber" placeholder="Enter new number">
+          <input type="tel" id="newNumber" name="newNumber">
     
           <label for="newAddress">Delivery Address:</label>
-          <textarea id="newAddress" name="newAddress" placeholder="Enter new address"></textarea>
+          <textarea id="newAddress" name="newAddress"></textarea>
     
           <label for="newName">Email Address:</label>
-          <input type="email" id="newEmail" name="newEmail" placeholder="Enter new email address">        
+          <input type="email" id="newEmail" name="newEmail">        
           
           <button type="submit" class="button-saveAccountChanges">Save Changes</button>
-          <button type="cancel" class="button-cancelAccountChanges">Cancel</button>
         </form>
       </section>
       <h3>Update Wallet</h3>
@@ -100,19 +100,8 @@
           <input type="text" id="creditcardVerification" name="creditcardVerification" placeholder="Enter CCV (XXX)"></textarea>
     
           <button type="submit" class="button-saveWalletChanges">Save Changes</button>
-          <button type="cancel" class="button-cancelWalletChanges">Cancel</button>
         </form>
       </section>  
-      <h3>Review Activity</h3>
-      <div>
-        <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
-        Quisque lobortis.Phasellus pellentesque purus in massa.</p>
-        <ul>
-          <li>List item one</li>
-          <li>List item two</li>
-          <li>List item three</li>
-        </ul>
-      </div>
       <h3>Help (FAQs)</h3>
       <div>
         <div id="accordion-help-faq">
@@ -167,7 +156,7 @@
       <h3 id="logoutUser">Logout</h3>
       <div class="button-wrapper">
         <button><img src="../img/icons/logout-icon.svg" class="button-logout"></button>
-        <span class="button-label logoutUser">Click here to Logout</span>
+        <span class="button-label logoutUser">Logout</span>
       </div> 
     </div>
     </section>   
@@ -175,7 +164,51 @@
   </main>
 
   <footer>
-    <!-- Placeholder for footer -->
-  </footer>
+    <div class="f-col">
+        <div class="footer-col">
+            <h4>Your Purchase</h4>
+            <ul>
+                <li><a href="" target="_self">Terms of Use</a></li>
+                <li><a href="" target="_self">Terms of Sale</a></li>
+                <li><a href="" target="_self">Privacy Policy</a></li>
+                <li><a href="" target="_self">Delivery</a></li>
+                <li><a href="" target="_self">Refunds & Returns</a></li>
+                <li><a href="" target="_self">Intellectual Property Issues</a></li>
+                <li><a href="" target="_self">Help Center</a></li>
+                <li><a href="" target="_self">Earn Rewards</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Explore our Menu</h4>
+            <ul>
+                <li><a href="../html/menu.html" target="_self">Burgers</a></li>
+                <li><a href="" target="_self">French Fries</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Who We Are</h4>
+            <ul>
+                <li><a href="aboutus.html" target="_self">About Us</a></li>
+                <li><a href="contact_us.html" target="_self">Contact Us</a></li>
+                <li><a href="" target="_self">Affiliates</a></li>
+                <li><a href="" target="_self">Carrers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="last-footer">
+        <ul>
+            <li><a href="https://www.instagram.com/" target="_blank"><img src="../img/logos/instagram-logo.png"
+                        alt="instagram" width="30" height="30"></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><img src="../img/logos/facebook-logo-white.png"
+                        alt="facebook" width="30" height="30"></a></li>
+            <li><a href="https://twitter.com/home" target="_blank"><img src="../img/logos/twitter-logo.png"
+                        alt="twitter" width="30" height="30"></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank"><img src="../img/logos/youtube-logo.png"
+                        alt="youtube" width="30" height="30"></a></li>
+        </ul>
+        <p>&copy; 2023 One Less Burger, Inc.</p>
+    </div>
+</footer>
 </body>
 </html>

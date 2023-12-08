@@ -5,9 +5,11 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.6;
 }
+
+
 
 /* Profile-top styles */
 .profile-top {  
@@ -67,16 +69,21 @@ body {
    margin: 5px 0;
 }
 
+.ui-accordion .ui-accordion-header {
+  position: initial;
+}
+
+.ui-icon {
+  position: initial;
+}
+
 /* ------------------------ */
 
 /* Edit Account Styles */
 
-.profile-buttons {
-  position: relative; 
+.profile-buttons { 
+  margin: 3em auto;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0; 
   padding: 10px;
   width: 90%;
   box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
@@ -86,12 +93,16 @@ body {
 
 /* Button styles */
 .profile-buttons button {
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
   background-color: brown;
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*style for the button container */
@@ -118,13 +129,9 @@ body {
 
 
 .button-logout{
-  filter: invert(0%) sepia(0%) saturate(7493%) hue-rotate(246deg) brightness(94%) contrast(100%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(17deg) brightness(104%) contrast(104%);
   width: 20px;
   height: 20px;
-}
-
-.profile-buttons button:hover {
-  transform: scale(1.1);
 }
 
 /* Accordion Forms */
@@ -134,14 +141,13 @@ body {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
 }
 
-.edit-account-form label,
+.edit-account-form,
 .edit-account-form input,
 .edit-account-form textarea,
 .edit-account-form button,
-.edit-wallet-form label,
+.edit-wallet-form,
 .edit-wallet-form input,
 .edit-wallet-form textarea,
 .edit-wallet-form button {
@@ -156,7 +162,7 @@ body {
 .edit-account-form button,
 .edit-wallet-form button {
   padding: 10px 20px;
-  background-color: burlywood;
+  background-color: green;
   color: white;
   border: none;
   border-radius: 3px;
@@ -166,15 +172,10 @@ body {
 
 .edit-account-form button:hover,
 .edit-wallet-form button:hover {
-  background-color: burlywood;
-  padding: 10px;
-  border: 1px solid #ccc;
+  background-color: rgb(36, 167, 36);
 }
 
-label {
-  background-color: brown;
-  color: white;
-}
+
 
 /* ---------------- MEDIA QUERIES --------------- */
 
@@ -189,9 +190,6 @@ label {
   }
 
   .profile-buttons {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     max-height: calc(100vh - 250px);
     width: 60%;
   }

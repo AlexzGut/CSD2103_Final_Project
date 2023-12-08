@@ -56,7 +56,6 @@ const createArticles = (cart) => {
                 $("#products-in-cart").css({
                     display: 'flex',
                     flexDirection: 'column',
-                    marginTop: '80px',
                     marginBottom: '2%',
                     justifyContent: 'flex-start'
                 });
@@ -64,7 +63,7 @@ const createArticles = (cart) => {
                 // Adds a new article with product information
                 $("#products-in-cart").append(
                 `<article id="article-product${n}">
-                    <div class="product-images"><img src="../img/menu/burgers/${element["imagePath"]}">
+                    <div class="product-images"><img src="../img/menu/products/${element["imagePath"]}">
                     </div>
                     <div class="product-information">
                         <h3 class="product-name"> ${element["name"]}</h3>

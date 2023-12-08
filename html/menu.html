@@ -4,10 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="../css/menu.css">
   <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
   <script src="../js/header.js"></script>
   <script src="../js/userInfo.js"></script>
   <script src="../js/menu.js"></script>
@@ -21,12 +25,12 @@
         <img src="../img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon icon">
         <ul id="header-list">
           <li><a href="../html/menu.html">Menu</a></li>
-          <li><a href="../html/contact-us">Contact Us</a></li>
+          <li><a href="../html/contact-us.html">Contact Us</a></li>
           <li><a href="#">Locations</a></li>
         </ul>
       </nav>
       <a href="../index.php" id="brand">
-        <h1>Hamburguers</h1>
+        <h1>One Less Burger</h1>
       </a>
       <div id="header-icons">
         <a href="../html/signin.html" id="user-link"><img class="white-icon icon" src="../img/icons/user-icon.svg"
@@ -40,15 +44,69 @@
       </div>
     </div>
   </header>
-  <nav>
-    <input type="search" name="search-product" id="search-product" placeholder="Search. . .">
-  </nav>
-  <main id="menu-container">
+  <main>
+    <nav>
+      <input type="search" name="search-product" id="search-product" placeholder="Search. . .">
+    </nav>
+    <div id="tabs">
+      <ul>
+        <li id="all"><a href="#all-menu-container">ALL</a></li>
+        <li id="burger"><a href="#all-menu-container">HAMBURGERS</a></li>
+        <li id="side"><a href="#all-menu-container">SIDES</a></li>
+      </ul>
+      <div id="all-menu-container" class="menu">
 
+      </div>
+    </div>
   </main>
   <footer>
+    <div class="f-col">
+      <div class="footer-col">
+        <h4>Your Purchase</h4>
+        <ul>
+          <li><a href="" target="_self">Terms of Use</a></li>
+          <li><a href="" target="_self">Terms of Sale</a></li>
+          <li><a href="" target="_self">Privacy Policy</a></li>
+          <li><a href="" target="_self">Delivery</a></li>
+          <li><a href="" target="_self">Refunds & Returns</a></li>
+          <li><a href="" target="_self">Intellectual Property Issues</a></li>
+          <li><a href="" target="_self">Help Center</a></li>
+          <li><a href="" target="_self">Earn Rewards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore our Menu</h4>
+        <ul>
+          <li><a href="../html/menu.html" target="_self">Burgers</a></li>
+          <li><a href="" target="_self">French Fries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Who We Are</h4>
+        <ul>
+          <li><a href="aboutus.html" target="_self">About Us</a></li>
+          <li><a href="contact_us.html" target="_self">Contact Us</a></li>
+          <li><a href="" target="_self">Affiliates</a></li>
+          <li><a href="" target="_self">Carrers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="last-footer">
+      <ul>
+        <li><a href="https://www.instagram.com/" target="_blank"><img src="../img/logos/instagram-logo.png"
+              alt="instagram" width="30" height="30"></a></li>
+        <li><a href="https://www.facebook.com/" target="_blank"><img src="../img/logos/facebook-logo-white.png"
+              alt="facebook" width="30" height="30"></a></li>
+        <li><a href="https://twitter.com/home" target="_blank"><img src="../img/logos/twitter-logo.png" alt="twitter"
+              width="30" height="30"></a></li>
+        <li><a href="https://www.youtube.com/" target="_blank"><img src="../img/logos/youtube-logo.png" alt="youtube"
+              width="30" height="30"></a></li>
+      </ul>
+      <p>&copy; 2023 One Less Burger, Inc.</p>
+    </div>
   </footer>
- 
+
 </body>
 
 </html>

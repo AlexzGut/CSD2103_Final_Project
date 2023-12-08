@@ -1,27 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const userinfoString = localStorage.getItem('userInfo');
-  const userInfo = JSON.parse(userinfoString);
+  const populateData = function() {
+    const userinfoString = localStorage.getItem('userInfo');
+    const userInfo = JSON.parse(userinfoString);
+   
+    const nameContainer = document.getElementById('user-name-placeholder');
+    if (nameContainer) {
+      nameContainer.textContent = `${userInfo.firstname} ${userInfo.lastname}`;
+    }
+    const firstNamePlaceHolder = document.getElementById('newfName');
+    firstNamePlaceHolder.setAttribute('placeholder', userInfo.firstname);
 
-  const firstName = userInfo.firstname;
-  const lastName = userInfo.lastname;
-  const phone = userInfo.phone;
-  const email = userInfo.email;
+    const lastNamePlaceHolder = document.getElementById('newlName');
+    lastNamePlaceHolder.setAttribute('placeholder', userInfo.lastname);
+  
+    const addressContainer = document.getElementById('user-address-placeholder');
+    if (addressContainer) {
+      addressContainer.textContent = `${userInfo.address}`;
+    }
+    const addressPlaceHolder = document.getElementById('newAddress');
+    addressPlaceHolder.setAttribute('placeholder', userInfo.address);
 
-  const nameContainer = document.getElementById('user-name-placeholder');
-  if (nameContainer) {
-    nameContainer.textContent = `${firstName} ${lastName}`;
-  }
-
-  const phoneContainer = document.getElementById('user-phone-placeholder');
-  if (phoneContainer) {
-    const lastFourDigits = phone.slice(-4);
-    phoneContainer.textContent = `***-***-${lastFourDigits}`;
-  }
-
-  const emailContainer = document.getElementById('user-email-placeholder');
-  if (emailContainer) {
-    emailContainer.textContent = `${email}`;
-  }
+  
+    const phoneContainer = document.getElementById('user-phone-placeholder');
+    let lastFourDigits;
+    if (phoneContainer) {
+      lastFourDigits = userInfo.phone.slice(-4);
+      phoneContainer.textContent = `***-***-${lastFourDigits}`;
+    }
+    const phonePlaceHolder = document.getElementById('newNumber');
+    phonePlaceHolder.setAttribute('placeholder', `***-***-${lastFourDigits}`);
+  
+    const emailContainer = document.getElementById('user-email-placeholder');
+    if (emailContainer) {
+      emailContainer.textContent = `${userInfo.email}`;
+    }
+    const emailPlaceHolder = document.getElementById('newEmail');
+    emailPlaceHolder.setAttribute('placeholder', userInfo.email);
+  };
 
   $(document).ready(function() {
     $("#accordion-edit-account").accordion({
@@ -57,7 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
           url: "../php/myaccountUpdate.php",
           data: $(this).serialize(),
           success: function(response) {
-            alert(response);
+            localStorage.setItem('userInfo', response);
+            populateData();
+            alert("Record updated successfully");
             form.reset(); // Reset the form  thanks for the idea Alex
           },
           error: function() {
@@ -104,13 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-  
-    $('.button-cancelWalletChanges').on('click', function() {
-      if (confirm('Are you sure you want to cancel changes?')) {
-        $('#creditcard-info-form')[0].reset(); // Reset the form thanks for the idea Alex
-      }
-    });
-
     // Basic credit card validations
     function validateCardNumber(cardNumber) {
       const cardNumberPattern = /^[0-9]{16}$/; // should be at least 16 digits with only numbers
@@ -127,4 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
       return cvvPattern.test(cardCVV);
     }
   });
+
+  populateData();
 });

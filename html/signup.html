@@ -6,16 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
         integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
     <script src="../js/signup.js"></script>
+    <script src="../js/header.js"></script>
 </head>
 
 <body>
+    <header>
+        <div id="header-wrapper">
+            <nav>
+                <img src="../img/icons/menu-icon.svg" alt="menu" id="menu-mobile" class="white-icon icon">
+                <ul id="header-list">
+                    <li><a href="../html/menu.html">Menu</a></li>
+                    <li><a href="../html/contact-us.html">Contact Us</a></li>
+                    <li><a href="#">Locations</a></li>
+                </ul>
+            </nav>
+            <a href="../index.php" id="brand">
+                <h1>One Less Burger</h1>
+            </a>
+            <div id="header-icons">
+                <a href="../html/signin.html" id="user-link"><img class="white-icon icon"
+                        src="../img/icons/user-icon.svg" alt="sign in icon" width="20">
+                    <p id="user-name">Sign In</p>
+                </a>
+                <div id="cart">
+                    <a href="../html/cart.html"><img class="white-icon icon" src="../img/icons/cart-icon.svg"
+                            alt="sign in icon" width="20"></a>
+                </div>
+            </div>
+        </div>
+    </header>
     <main>
         <h1>Sign Up</h1>
         <p>Create an account to order, and access the best deals.</p>

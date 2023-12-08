@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,8 +25,8 @@ header {
     transform: translateY(-50%);
 }
 
-main {
-    display: flex;
+.menu {
+    display: flex !important;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
@@ -42,8 +42,6 @@ section {
 }
 
 img {
-    width: 100%;
-    height: auto;
     border-radius: 5px 5px 0 0;
 }
 
@@ -174,6 +172,49 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: rgb(231, 231, 231);
     margin: 1em auto;
     display: block;
+}
+
+#search-product {
+    margin-top: 80px;
+}
+
+.ui-tabs {
+    position: initial; 
+    padding: 0.2em;
+}
+
+.ui-tabs-tab {
+    font-weight: bold !important;
+}
+
+.ui-tabs .ui-tabs-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    float: initial; 
+    position: initial; 
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: none; 
+    background: none; 
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: none; 
+    background: none; 
+}
+
+.ui-widget-header {
+    border: none; 
+    background: none; 
 }
 
 @media only screen and (max-width: 600px) {

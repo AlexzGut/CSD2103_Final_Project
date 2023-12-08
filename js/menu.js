@@ -1,25 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const menuContainer = document.getElementById("menu-container");
-    const prevPageButton = document.getElementById("prevPage");
-    const nextPageButton = document.getElementById("nextPage");
-    const homeButton = document.getElementById("homeButton");
+    const menuContainer = document.getElementById("all-menu-container");
 
     const menuData = [];
 
-    const itemsPerPage = 9;
-    let currentPage = 0;
-
     function displayMenu() {
         menuContainer.innerHTML = "";
-        const startIndex = currentPage * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
 
-        for (let i = startIndex; i < endIndex && i < menuData.length; i++) {
+        for (let i = 0; i < menuData.length; i++) {
             const item = menuData[i];
             const section = document.createElement("section");
             section.innerHTML = `
             <div class="item-wrapper">
-                <img src="../img/menu/burgers/${item.image}" alt="${item.name}">
+                <img src="../img/menu/products/${item.image}" alt="${item.name}">
                 <div class="details-container">
                     <div class="details-wrapper">
                         <h2>${item.name}</h2>
@@ -99,21 +91,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const retrieveProducts = function () {
+        let tabSelected = localStorage.getItem('tabSelected');
         $.ajax({
             url: '../php/getItemsMenu.php', //path to the PHP file
             method: 'POST',
-            data: { name: $('#search-product').val() },
+            data: { name: $('#search-product').val(), tab: tabSelected },
             dataType: 'json',
             success: function (products) {
                 // Handle the returned JSON data
+                console.log(products);
                 menuData.splice(0, menuData.length); // clears products data.
                 menuData.push(...products); // populate manuData array with the data returned from the server.
-                displayMenu(); 
+                console.log(menuData);
+                displayMenu();
             }
         });
     };
 
     $('#search-product').on('input', retrieveProducts);
 
+    localStorage.setItem('tabSelected', 'all');
     retrieveProducts();
+
+    $("#tabs").tabs();
+
+    const tabSelected = function () {
+        localStorage.setItem('tabSelected', `${$(this).attr('id') ?? 'all'}`);
+        $('#search-product').val('');
+        retrieveProducts();
+    };
+
+    $('#tabs li').on('click', tabSelected);
 });

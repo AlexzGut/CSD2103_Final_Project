@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require 'userModel.php';
 if (session_status() == PHP_SESSION_ACTIVE) {
   $servername = "localhost";
   $username = "web";
@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_SESSION['username'];
-    
+
     $first_name = $_POST['newfName'];
     $last_name = $_POST['newlName'];
     $phone = $_POST['newNumber'];
@@ -43,17 +43,26 @@ if (session_status() == PHP_SESSION_ACTIVE) {
       $updatesqlstatement = "UPDATE users SET " . implode(", ", $updates) . " WHERE username = '$username'";
 
       if ($conn->query($updatesqlstatement) === TRUE) {
-        echo "Record updated successfully";
+
+        $sqlstatement = "SELECT * FROM users WHERE username = '$username'";
+        $resultset = mysqli_query($conn, $sqlstatement);
+
+        if (mysqli_num_rows($resultset) > 0) {
+          $row = mysqli_fetch_assoc($resultset);
+
+          $user = new User($row['first_name'], $row['last_name'], $row['email'], $row['phone'], $row['date_of_birth'], $row['address']);
+
+          echo json_encode($user);
+        } else {
+          echo "Error updating record: " . $conn->error;
+        }
       } else {
-        echo "Error updating record: " . $conn->error;
+        echo "No fields to update.";
       }
     } else {
-      echo "No fields to update.";
+      header('location: ../html/signin.html');
     }
-  } else {
-    header('location: ../html/signin.html');
-  }
 
-  mysqli_close($conn);
+    mysqli_close($conn);
+  }
 }
-?>

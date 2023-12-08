@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
 
-            $user = new User($row['first_name'], $row['last_name'], $row['email'], $row['phone'], $row['date_of_birth']);
+            $user = new User($row['first_name'], $row['last_name'], $row['email'], $row['phone'], $row['date_of_birth'], $row['address']);
 
             $_SESSION['JSON_USER_INFO'] = json_encode($user);
 

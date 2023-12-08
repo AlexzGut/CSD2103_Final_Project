@@ -38,7 +38,7 @@ nav {
     text-align: center;
     background-color: brown;
     padding-left: 0;
-    width: 50%;
+    width: 8em;
     font-size: 1.2em
 }
 
@@ -75,10 +75,10 @@ img.icon {
 
 @media screen and (min-width: 990px) {
 
-    header {
+    /* header {
         display: block;
         height: 80px;
-    }
+    } */
 
     nav {
         margin-left: 2em;
@@ -103,6 +103,7 @@ img.icon {
         gap: 2em;
         padding: 0;
         font-size: 1em;
+        width: 18em;
     }
 
     #header-list li {
