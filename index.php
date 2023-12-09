@@ -31,7 +31,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         <ul id="header-list">
           <li><a href="html/menu.html">Menu</a></li>
           <li><a href="html/contact-us.html">Contact Us</a></li>
-          <li><a href="#">Locations</a></li>
         </ul>
       </nav>
       <a href="../Final_Project/index.php" id="brand">
