@@ -31,7 +31,7 @@ CREATE TABLE `credit_cards` (
   `card_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `card_number` varchar(20) DEFAULT NULL,
-  `expiry_date` date DEFAULT NULL,
+  `expiry_date` varchar(20) DEFAULT NULL,
   `cvv` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
