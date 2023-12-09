@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
--- Generation Time: Dec 09, 2023 at 03:09 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1:3307:3307
+-- Tiempo de generación: 09-12-2023 a las 04:21:12
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `registration`
+-- Base de datos: `registration`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `credit_cards`
+-- Estructura de tabla para la tabla `credit_cards`
 --
 
 CREATE TABLE `credit_cards` (
@@ -36,16 +36,17 @@ CREATE TABLE `credit_cards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `credit_cards`
+-- Volcado de datos para la tabla `credit_cards`
 --
 
 INSERT INTO `credit_cards` (`card_id`, `user_id`, `card_number`, `expiry_date`, `cvv`) VALUES
-(2, 33, '1234567890123456', '0000-00-00', '123');
+(2, 33, '1234567890123456', '0000-00-00', '123'),
+(3, 37, '1111567890123456', '09/28', '387');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -61,25 +62,34 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `username`, `password`) VALUES
-(33, 'rodr', 'rodri', 'rod@rod', '911', '2023-12-08', '', 'rodriguez', '$2y$10$769RX8ZhaFRZ2zbHboispOXkgfiS7VSKBudER3JUyMCCozToCuPW2');
+(3, 'Tatiana', 'Marquez', 'tatiana@gmail.com', '12312312', '2023-11-01', '', 'tatto', '$2y$10$y9JGQ3HxYHAgXIZkQrdZte00H294B6tQatNfx7cCYV428LtcaYE5.'),
+(5, 'Alexander', 'Gutierrez', 'alexander.gutierrez@gmail.com', '6478601662', '2023-11-02', '347 Lawson Rd, Scarborough', 'alex', '$2y$10$jwe2fT3FEph/iUipdLNHwu1CJFfxamkZhSTJy3aDLMyzSsZL559mO'),
+(18, 'John', 'Gutierrez', 'john.gutierrez@gmail.com', '4478601663', '1995-10-17', '', 'johnguti', '$2y$10$6BMzQU3QDEcOT1UiEPuqlu2EQn84rS3VXbIMvR6fNUMaVGcaGtCFq'),
+(19, '', '', '', '', '0000-00-00', '', '', '$2y$10$eyBYW/kfJGUABgtmqCUJ.OJ2ZlPSCFxb.BZhB8nmct9a/J5Fpi0SG'),
+(25, 't', 't', 'mtatttt@gmail.com', 't', '1995-10-19', '', 'tatis', '$2y$10$i3Qs3HL9a.j1M./4Ru4eB.YAWhjKfDP50ZNUtsaN6mV9oyKJCMP9G'),
+(26, 'Josefita', 'Quico', 'quico@gmaill.com', '34534534534534', '2023-12-07', '', 'quiquico', '$2y$10$rAqSCyNdYpVihd/FIbHoNebfbNGjUNvzjrzPWaSf59KHziT0f.uYu'),
+(27, 'Miguel', 'Rodriguez', 'miguel.rodriguez@gmail.com', '6473890987', '2023-12-12', '', 'miguelito', '$2y$10$JYOhoKP/.Rs.dMFswXkH9OzQxxBQtE8q5DvFYf68zBTexIMVvbHG6'),
+(31, 'Miguel', 'Rodriguez', 't.rodriguez@gmail.com', '6473890980', '2023-12-12', '', 'miguelitoo', '$2y$10$V3ATbMT0qJRyIQMtrjY0fO.I/KAq02e4ivaqjvvTZ6LVnSZbtC09q'),
+(33, 'asdasd', 'asdasdasd', 'asdas@aadsasd.com', '123123312', '2023-12-05', 'qweqwe1223213', 'qwer', '$2y$10$7Nf4SAxXajB8MzguXBZ6R.2MYzvLCSALVhCY2g0PfU2.wGqouj/o2'),
+(37, 'asdasd', 'asdasdasd', 'asdas@aadsa9sd.com', '18123312', '2023-12-05', 'qweqwe1223213', 'qwer9', '$2y$10$M4z3028wnCuvzvbj47t48uz/hnEOCdLPANEMtnX2mE8zak7puHo8i');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `credit_cards`
+-- Indices de la tabla `credit_cards`
 --
 ALTER TABLE `credit_cards`
   ADD PRIMARY KEY (`card_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -88,27 +98,27 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `credit_cards`
+-- AUTO_INCREMENT de la tabla `credit_cards`
 --
 ALTER TABLE `credit_cards`
-  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `credit_cards`
+-- Filtros para la tabla `credit_cards`
 --
 ALTER TABLE `credit_cards`
   ADD CONSTRAINT `credit_cards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
