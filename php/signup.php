@@ -29,6 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $insertsqlstatement = "INSERT INTO users (first_name, last_name, email, phone, date_of_birth, username, password)
                      VALUES ('$firstname', '$lastname', '$email', '$phone', '$dob', '$username', '$hashed_password')";
     mysqli_query($conn, $insertsqlstatement);
+    
+    $selectsqlstatementID = "SELECT id FROM users WHERE username = '$username'";
+    $ID = mysqli_query($conn, $selectsqlstatementID);
+    $IDRow = mysqli_fetch_assoc($ID);
+    $IDValue = $IDRow['id'];
+    $insertsqlstatementCreditCard = "INSERT INTO credit_cards (user_id)
+    VALUES ('$IDValue')";
+    mysqli_query($conn, $insertsqlstatementCreditCard);
 
     $selectsqlstatement = "SELECT * FROM users WHERE username = '$username'";
     $resultset = mysqli_query($conn, $selectsqlstatement);
