@@ -19,7 +19,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
     $first_name = $_POST['newfName'];
     $last_name = $_POST['newlName'];
     $phone = $_POST['newNumber'];
-    $delivery_address = $_POST['newAddress'];
+    $address = $_POST['newAddress'];
     $email = $_POST['newEmail'];
 
     $updates = [];
@@ -32,8 +32,8 @@ if (session_status() == PHP_SESSION_ACTIVE) {
     if (!empty($phone)) {
       $updates[] = "phone = '$phone'";
     }
-    if (!empty($delivery_address)) {
-      $updates[] = "delivery_address = '$delivery_address'";
+    if (!empty($address)) {
+      $updates[] = "address = '$address'";
     }
     if (!empty($email)) {
       $updates[] = "email = '$email'";
