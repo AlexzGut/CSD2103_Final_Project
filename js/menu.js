@@ -99,10 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
             dataType: 'json',
             success: function (products) {
                 // Handle the returned JSON data
-                console.log(products);
                 menuData.splice(0, menuData.length); // clears products data.
                 menuData.push(...products); // populate manuData array with the data returned from the server.
-                console.log(menuData);
                 displayMenu();
             }
         });
