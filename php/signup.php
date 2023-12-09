@@ -1,5 +1,7 @@
 <?php
 
+require 'userModel.php';
+
 $servername = "localhost";
 $username = "web";
 $password = "web";
@@ -24,15 +26,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    $sqlstatement = "INSERT INTO users (first_name, last_name, email, phone, date_of_birth, username, password)
+    $insertsqlstatement = "INSERT INTO users (first_name, last_name, email, phone, date_of_birth, username, password)
                      VALUES ('$firstname', '$lastname', '$email', '$phone', '$dob', '$username', '$hashed_password')";
-    mysqli_query($conn, $sqlstatement);
-}
-// $result = mysqli_query($conn, $sqlstatement);
-// if ($result) {
-//   echo "Data inserted successfully!";
-// }
+    mysqli_query($conn, $insertsqlstatement);
 
-header('location: ../index.php');
+    $selectsqlstatement = "SELECT * FROM users WHERE username = '$username'";
+    $resultset = mysqli_query($conn, $selectsqlstatement);
+
+    if (mysqli_num_rows($resultset) > 0) {
+        $row = mysqli_fetch_assoc($resultset);
+
+        if (password_verify($password, $row['password'])) {
+            session_start();
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+
+            $user = new User($row['first_name'], $row['last_name'], $row['email'], $row['phone'], $row['date_of_birth'], $row['address']);
+
+            $_SESSION['JSON_USER_INFO'] = json_encode($user);
+
+            header('location: ../index.php');
+        }
+      }
+}
 mysqli_close($conn);
 ?>
