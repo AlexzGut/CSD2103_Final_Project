@@ -1,0 +1,119 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3308
+-- Generation Time: Dec 09, 2023 at 03:09 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `registration`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `credit_cards`
+--
+
+CREATE TABLE `credit_cards` (
+  `card_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `card_number` varchar(20) DEFAULT NULL,
+  `expiry_date` date DEFAULT NULL,
+  `cvv` varchar(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `credit_cards`
+--
+
+INSERT INTO `credit_cards` (`card_id`, `user_id`, `card_number`, `expiry_date`, `cvv`) VALUES
+(2, 33, '1234567890123456', '0000-00-00', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(6) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `username` varchar(16) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `username`, `password`) VALUES
+(33, 'rodr', 'rodri', 'rod@rod', '911', '2023-12-08', '', 'rodriguez', '$2y$10$769RX8ZhaFRZ2zbHboispOXkgfiS7VSKBudER3JUyMCCozToCuPW2');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `credit_cards`
+--
+ALTER TABLE `credit_cards`
+  ADD PRIMARY KEY (`card_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phone` (`phone`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `credit_cards`
+--
+ALTER TABLE `credit_cards`
+  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `credit_cards`
+--
+ALTER TABLE `credit_cards`
+  ADD CONSTRAINT `credit_cards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,15 @@
+Manual: 
+
+0 - Download the zip and unzip it on htdocs of XAMPP folder.
+1 - Execute XAMPP and run MySQL and Apache modules in their default ports.
+2 - In XAMPP program click on Admin MySQL.
+3 - In phpMyAdmin page, in the left side bar click on New to add a new database.
+4 - In the page opened, create a database named "products" and other one named "registration".
+5 - Now open products database and go on SQL section. Then copy the text on products.txt and run it.
+6 - In the same way, open registration database and go to SQL section. Then copy the text on registration.txt and run it.
+7 - Then, on XAMPP program click on Admin Apache.
+8 - In the web address replace /dashboard/ to /folder_name/. Where folder_name is the name that you save the project with.
+9 - To sign up, go to Sign in link on the top-right section and click on it. Then, if you still doesn't have an account create one by clicking on sign up and fill the form. 
+10 - Once signed in, your name will appear on the right side of the page.
+11 - You can go to menu and add products to the cart. All products you add will appear in the cart page. Also you can use the input field to filter by name of the products.
+12 - If you click on your name, you can edit the details of your account such as name, address, etc.
