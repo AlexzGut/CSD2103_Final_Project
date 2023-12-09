@@ -22,12 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $dob = mysqli_real_escape_string($conn, $_POST['date-of-birth']);
+    $address = mysqli_real_escape_string($conn, $_POST['address']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    $insertsqlstatement = "INSERT INTO users (first_name, last_name, email, phone, date_of_birth, username, password)
-                     VALUES ('$firstname', '$lastname', '$email', '$phone', '$dob', '$username', '$hashed_password')";
+    $insertsqlstatement = "INSERT INTO users (first_name, last_name, email, phone, date_of_birth, address, username, password)
+                     VALUES ('$firstname', '$lastname', '$email', '$phone', '$dob', '$address', '$username', '$hashed_password')";
     mysqli_query($conn, $insertsqlstatement);
     
     $selectsqlstatementID = "SELECT id FROM users WHERE username = '$username'";
